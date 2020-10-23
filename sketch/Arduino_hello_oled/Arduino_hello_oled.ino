@@ -5,9 +5,10 @@
 // suitable for Arduino Nano as well, pin 9 as GND
 //#define OLED_9GND876
 // suitable for Arduino Uno & Arduino MEGA2560, pin 7 as GND
-#define OLED_7GND654
+//#define OLED_7GND654
 // suitable for Arduino Uno & Arduino MEGA2560
 //#define OLED_GND13_12_11
+#define OLED_2GND345
 
 // if you know you have an ESP8266 based board, uncomment next line
 //#define ESP8266
@@ -32,6 +33,12 @@ U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 12, /* data=*/ 14, /* reset=*
     #define OLED_PWR_PIN 2
   #endif
   U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 3, /* data=*/ 4, /* reset=*/ U8X8_PIN_NONE);
+#elif defined OLED_2GND345
+  #ifdef OLED_PWR_PIN
+    #undef OLED_PWR_PIN
+    #define OLED_PWR_PIN 3
+  #endif  
+  U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 4, /* data=*/ 5, /* reset=*/ U8X8_PIN_NONE);
 #elif defined OLED_9GND876
   #ifdef OLED_PWR_PIN
     #undef OLED_PWR_PIN
@@ -71,7 +78,11 @@ void setup() {
 #ifdef OLED_PWR_PIN
   pinMode(OLED_PWR_PIN, OUTPUT);
   digitalWrite(OLED_PWR_PIN, HIGH);
-#ifdef OLED_9GND876
+#ifdef OLED_2GND345
+  //use pin 2 as ground
+  pinMode(2, OUTPUT);
+  digitalWrite(2, LOW);
+#elif OLED_9GND876
   //use pin 9 as ground
   pinMode(9, OUTPUT);
   digitalWrite(9, LOW);
