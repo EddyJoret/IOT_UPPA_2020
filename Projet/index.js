@@ -1,18 +1,21 @@
-var res;
-$(document).ready(function() {
+var heure = [];
+var date = [];
+var temp = [];
+var pluie = [];
+var lum = [];
+
+/*$(document).ready(function() {
 
     $.ajax({
-        url: 'https://api.thingspeak.com/channels/1262751/feeds.json?api_key=2S085VSZXSR18S66&results=5',
+        url: 'https://api.thingspeak.com/channels/1262751/feeds.json?api_key=2S085VSZXSR18S66',
         type: 'GET',
         dataType: "json",
         data: {
             format: 'json'
         },
         success: function(response) {
-            //console.log(response);
-            res = response;
-            console.log(res);
-            data();
+            var res = response;
+            initHtml(res);
         },
         error: function() {
             $('#errors').text("There was an error processing your request. Please try again.");
@@ -20,12 +23,21 @@ $(document).ready(function() {
     });
 
 
-});
+});*/
 
-function data(){
+function initHtml(res){
+    initData(res);
+};
+
+function initData(res){
     for(var i=0; i<res.feeds.length; i++){
-        console.log(res.feeds[i].created_at); 
+        date.push(res.feeds[i].created_at.substr(0,10));
+        heure.push(res.feeds[i].created_at.substr(-9, 8));
+        temp.push(res.feeds[i].field2);
+        pluie.push(res.feeds[i].field1);
+        lum.push(res.feeds[i].field3);
     }
-    console.log(res.feeds);
-}
+};
+
+
 

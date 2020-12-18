@@ -1,0 +1,38 @@
+
+.menu-wrap{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.menu{
+    position: fixed;
+	width: 250px;
+	height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.menu > div > ul{
+    margin-top: 100px;
+}
+
+.menu > div > ul > li{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.menu > div > ul > li > a{
+	text-decoration: none;
+	color: white;
+	font-weight: 550;
+	text-transform: uppercase;
+	margin: .5rem;
+	font-size: 20px;
+	display: inline-block;
+
+}
+
+.menu > div > ul > li > a:hover{
+	color: #eaba4e;
+}
