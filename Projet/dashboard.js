@@ -65,20 +65,20 @@ function initOptions(){
     options.xaxis.categories = heure;
     console.log("heure = " + heure);
     console.log("options.xaxis.categories = " + options.xaxis.categories);
-}
+};
 
 function initGraph(){
     console.log(options);
     var chart = new ApexCharts(document.querySelector("#apex1"), options);
     chart.render();
-}
+};
 
 function toggleSidebar() {
     if (!sidebarOpen) {
       sidebar.classList.add("sidebar_responsive");
       sidebarOpen = true;
     }
-}
+};
 
 function closeSidebar() {
     if (sidebarOpen) {
