@@ -51,7 +51,7 @@ function initHtml(res){
 function initData(res){
     for(var i = 0; i < res.feeds.length; i++){
         date.push(res.feeds[i].created_at.substr(0,10));
-        heure.push(res.feeds[i].created_at.substr(-9, 2));
+        heure.push(res.feeds[i].created_at.substr(-9, 5));
         temp.push(res.feeds[i].field2);
         pluie.push(res.feeds[i].field1);
         lum.push(res.feeds[i].field3);
