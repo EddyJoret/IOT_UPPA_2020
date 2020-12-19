@@ -3,12 +3,26 @@ var date = [];
 var temp = [];
 var pluie = [];
 var lum = [];
+
 var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
 var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
-/*$(document).ready(function() {
+var options = {
+    chart: {
+      type: 'line'
+    },
+    series: [{
+      name: 'sales',
+      data: []
+    }],
+    xaxis: {
+      categories: []
+    }
+};
 
+$(document).ready(function() {
+    console.log("test");
     $.ajax({
         url: 'https://api.thingspeak.com/channels/1262751/feeds.json?api_key=2S085VSZXSR18S66',
         type: 'GET',
@@ -26,48 +40,49 @@ var sidebarCloseIcon = document.getElementById("sidebarIcon");
     });
 
 
-});*/
-var options = {
-    chart: {
-      type: 'line'
-    },
-    series: [{
-      name: 'sales',
-      data: [30,40,35,50,49,60,70,91,125]
-    }],
-    xaxis: {
-      categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
-    }
-  }
+});
 
 function initHtml(res){
     initData(res);
+    initOptions();
+    initGraph();
 };
 
 function initData(res){
-    for(var i=0; i<res.feeds.length; i++){
+    for(var i = 0; i < res.feeds.length; i++){
         date.push(res.feeds[i].created_at.substr(0,10));
-        heure.push(res.feeds[i].created_at.substr(-9, 8));
+        heure.push(res.feeds[i].created_at.substr(-9, 2));
         temp.push(res.feeds[i].field2);
         pluie.push(res.feeds[i].field1);
         lum.push(res.feeds[i].field3);
     }
 };
 
-var chart = new ApexCharts(document.querySelector("#apex1"), options);
-chart.render();
+function initOptions(){
+    options.series[0].data = temp;
+    console.log("temp = " + temp);
+    console.log("options.series[0].data = " + options.series[0].data);
+    options.xaxis.categories = heure;
+    console.log("heure = " + heure);
+    console.log("options.xaxis.categories = " + options.xaxis.categories);
+}
+
+function initGraph(){
+    console.log(options);
+    var chart = new ApexCharts(document.querySelector("#apex1"), options);
+    chart.render();
+}
 
 function toggleSidebar() {
     if (!sidebarOpen) {
       sidebar.classList.add("sidebar_responsive");
       sidebarOpen = true;
     }
-  }
-  
-  function closeSidebar() {
+}
+
+function closeSidebar() {
     if (sidebarOpen) {
       sidebar.classList.remove("sidebar_responsive");
       sidebarOpen = false;
     }
-  }
-
+};
