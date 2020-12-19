@@ -3,6 +3,9 @@ var date = [];
 var temp = [];
 var pluie = [];
 var lum = [];
+var sidebarOpen = false;
+var sidebar = document.getElementById("sidebar");
+var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
 /*$(document).ready(function() {
 
@@ -24,6 +27,18 @@ var lum = [];
 
 
 });*/
+var options = {
+    chart: {
+      type: 'line'
+    },
+    series: [{
+      name: 'sales',
+      data: [30,40,35,50,49,60,70,91,125]
+    }],
+    xaxis: {
+      categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+    }
+  }
 
 function initHtml(res){
     initData(res);
@@ -39,5 +54,20 @@ function initData(res){
     }
 };
 
+var chart = new ApexCharts(document.querySelector("#apex1"), options);
+chart.render();
 
+function toggleSidebar() {
+    if (!sidebarOpen) {
+      sidebar.classList.add("sidebar_responsive");
+      sidebarOpen = true;
+    }
+  }
+  
+  function closeSidebar() {
+    if (sidebarOpen) {
+      sidebar.classList.remove("sidebar_responsive");
+      sidebarOpen = false;
+    }
+  }
 
