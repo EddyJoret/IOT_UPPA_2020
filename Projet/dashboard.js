@@ -32,7 +32,7 @@ var options = {
     }
 };
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     console.log("test");
     $.ajax({
         url: 'https://api.thingspeak.com/channels/1262751/feeds.json?api_key=2S085VSZXSR18S66',
@@ -51,7 +51,7 @@ $(document).ready(function() {
     });
 
 
-});
+});*/
 
 function initHtml(res){
     initData(res);
