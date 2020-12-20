@@ -1,41 +1,3 @@
-/*.menu-wrap{
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 2;
-}
-
-.menu{
-    position: fixed;
-	width: 250px;
-	height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.menu > div > ul{
-    margin-top: 100px;
-}
-
-.menu > div > ul > li{
-    list-style: none;
-    margin-top: 20px;
-}
-
-.menu > div > ul > li > a{
-	text-decoration: none;
-	color: white;
-	font-weight: 550;
-	text-transform: uppercase;
-	margin: .5rem;
-	font-size: 20px;
-	display: inline-block;
-
-}
-
-.menu > div > ul > li > a:hover{
-	color: #eaba4e;
-}*/
-
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 /*  styling scrollbars  */
@@ -197,27 +159,38 @@ main {
 }
 
 .main__cards {
-  display: grid;
+  /*display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin: 20px 0;*/
+  display: grid;
   gap: 30px;
   margin: 20px 0;
 }
 
 .card {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 70px;
   padding: 25px;
   border-radius: 5px;
   background: #ffffff;
+  box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #ffffff;
+  height: auto;
+  padding: 25px;
+  border-radius: 5px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
 }
 
 .card_inner {
-  display: flex;
+  /*display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;*/
 }
 
 .card_inner > span {
