@@ -17,7 +17,18 @@ var options = {
       data: []
     }],
     xaxis: {
-      categories: []
+      categories: [],
+      title: {
+          text: 'Heures'
+      }
+    },
+    yaxis: {
+        title: {
+            text: 'Température (en degré)'
+        }
+    },
+    title: {
+        text: 'Capteur température'
     }
 };
 
