@@ -13,9 +13,12 @@ var options = {
       type: 'line'
     },
     series: [{
-      name: 'sales',
+      name: 'Température',
       data: []
     }],
+    stroke: {
+      curve: 'smooth',
+    },
     xaxis: {
       categories: [],
       title: {
