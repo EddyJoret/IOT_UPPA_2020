@@ -50,7 +50,7 @@ var options = {
       width: 3
     },
     markers: {
-      size: 0
+      size: 3
     },
     xaxis: {
       type: 'datetime'
