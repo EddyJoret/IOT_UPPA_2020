@@ -212,7 +212,17 @@ main {
   border-radius: 5px;
   background: #ffffff;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+  word-wrap: break-word;
 }
+
+.pull-up{
+  transition: all .25s ease;
+}
+.pull-up:hover {
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 14px 24px rgba(62,57,107,.2);
+  z-index:30
+ }
 
 .card_inner {
   display: flex;
