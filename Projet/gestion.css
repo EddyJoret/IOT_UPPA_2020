@@ -421,6 +421,25 @@ main {
   position: absolute;
 }
 
+.button-gerer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-gere{
+  font-size: 16px;
+  border-radius: 2em;
+  padding: 0.3em 1.2em;
+  background-color: #4eb5f1;
+  text-decoration: none;
+  border: none;
+  color: white;
+}
+
+.btn-gere:hover{
+  background-color: #4095c6;
+  cursor: pointer;
+}
 @media only screen and (max-width: 978px) {
   .container {
     grid-template-columns: 1fr;
