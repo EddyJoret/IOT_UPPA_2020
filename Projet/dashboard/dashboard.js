@@ -39,17 +39,15 @@ var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
 var options = {
     series: [{
+      name: 'Température',
       data: tempdata
     }],
     chart: {
       type: 'line',
     },
-    colors: ['#546E7A'],
     stroke: {
+      curve: 'smooth',
       width: 3
-    },
-    dataLabels: {
-      enabled: false
     },
     markers: {
       size: 0
@@ -85,9 +83,12 @@ function initHtml(res){
 
 function initData(res){
     for(var i = 0; i < res.feeds.length; i++){
-        var text = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + ':' + res.feeds[i].created_at.substr(-9, 8) + '\","y":\"' + res.feeds[i].field2 + '\"}';
+        var text = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(text);
         tempdata.push(objtemp);
+        console.log(text);
+        console.log(objtemp);
+
 
         date.push(res.feeds[i].created_at.substr(0,10));
         heure.push(res.feeds[i].created_at.substr(-9, 5));
