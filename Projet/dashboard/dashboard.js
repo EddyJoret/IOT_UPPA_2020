@@ -4,11 +4,13 @@ var temp = [];
 var pluie = [];
 var lum = [];
 
+var tempdata = [];
+
 var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
 var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
-var options = {
+/*var options = {
     chart: {
       type: 'line'
     },
@@ -33,10 +35,37 @@ var options = {
     title: {
         text: 'Capteur température'
     }
+};*/
+
+var options = {
+    series: [{
+      data: tempdata
+    }],
+    chart: {
+      id: 'chart2',
+      type: 'line',
+      height: 230,
+      toolbar: {
+        autoSelected: 'pan',
+        show: false
+      }
+    },
+    colors: ['#546E7A'],
+    stroke: {
+      width: 3
+    },
+    dataLabels: {
+      enabled: false
+    },
+    markers: {
+      size: 0
+    },
+    xaxis: {
+      type: 'datetime'
+    }
 };
 
 $(document).ready(function() {
-    console.log("test");
     $.ajax({
         url: 'https://api.thingspeak.com/channels/1262751/feeds.json?api_key=2S085VSZXSR18S66',
         type: 'GET',
@@ -62,25 +91,25 @@ function initHtml(res){
 
 function initData(res){
     for(var i = 0; i < res.feeds.length; i++){
+        var text = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + ':' + res.feeds[i].created_at.substr(-9, 8) + '\","y":\"' + res.feeds[i].field2 + '\"}';
+        var objtemp = JSON.parse(text);
+        tempdata.push(objtemp);
+
         date.push(res.feeds[i].created_at.substr(0,10));
         heure.push(res.feeds[i].created_at.substr(-9, 5));
         temp.push(res.feeds[i].field2);
         pluie.push(res.feeds[i].field1);
         lum.push(res.feeds[i].field3);
     }
+    //console.log(tempdata);
 };
 
 function initOptions(){
-    options.series[0].data = temp;
-    console.log("temp = " + temp);
-    console.log("options.series[0].data = " + options.series[0].data);
-    options.xaxis.categories = heure;
-    console.log("heure = " + heure);
-    console.log("options.xaxis.categories = " + options.xaxis.categories);
+    /*options.series[0].data = temp;
+    options.xaxis.categories = heure;*/
 };
 
 function initGraph(){
-    console.log(options);
     var chart = new ApexCharts(document.querySelector("#apex1"), options);
     chart.render();
 };
