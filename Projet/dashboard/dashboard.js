@@ -42,13 +42,7 @@ var options = {
       data: tempdata
     }],
     chart: {
-      id: 'chart2',
       type: 'line',
-      height: 230,
-      toolbar: {
-        autoSelected: 'pan',
-        show: false
-      }
     },
     colors: ['#546E7A'],
     stroke: {
