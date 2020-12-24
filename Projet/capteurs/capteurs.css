@@ -433,6 +433,11 @@ input{
   width: 40px;
 }
 
+.switch::before {
+    content: "Off";
+    margin-right: 50px;
+}
+
 .switch input {
   display: none;
 }
@@ -468,8 +473,12 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider:after{
-    content: "ON";
+    content: "On";
     margin-left: 50px;
+}
+
+input:checked + .switch::before{
+    display: none;
 }
 
 .slider.round {
