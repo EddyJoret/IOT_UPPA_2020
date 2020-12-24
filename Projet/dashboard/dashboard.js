@@ -80,6 +80,7 @@ var optionshygro = {
             text: 'Pluie'
         },
         opposite: true,
+        tickAmount: 1,
         max: 1,
         min: 0
       }
