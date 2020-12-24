@@ -10,34 +10,7 @@ var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
 var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
-/*var options = {
-    chart: {
-      type: 'line'
-    },
-    series: [{
-      name: 'Température',
-      data: []
-    }],
-    stroke: {
-      curve: 'smooth',
-    },
-    xaxis: {
-      categories: [],
-      title: {
-          text: 'Heures'
-      }
-    },
-    yaxis: {
-        title: {
-            text: 'Température (en degré)'
-        }
-    },
-    title: {
-        text: 'Capteur température'
-    }
-};*/
-
-var options = {
+var optionstemp = {
     series: [{
       name: 'Température',
       data: tempdata
@@ -109,8 +82,15 @@ function initData(res){
 };
 
 function initGraph(){
-    var chart = new ApexCharts(document.querySelector("#apex1"), options);
-    chart.render();
+    var charttemp = new ApexCharts(document.querySelector("#apex1"), optionstemp);
+    var charthygro = new ApexCharts(document.querySelector("#apex2"), optionstemp);
+    var charthumsol = new ApexCharts(document.querySelector("#apex3"), optionstemp);
+    var chartlum = new ApexCharts(document.querySelector("#apex4"), optionstemp);
+
+    charttemp.render();
+    charthygro.render();
+    charthumsol.render();
+    chartlum.render();
 };
 
 function toggleSidebar() {
