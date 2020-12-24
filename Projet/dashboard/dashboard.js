@@ -85,7 +85,7 @@ var optionsrfu = {
     },
     yaxis: {
         title: {
-            text: 'RFU (en %)'
+            text: 'RFU (en mm)'
         }
     },
     xaxis: {
