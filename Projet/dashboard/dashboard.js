@@ -24,6 +24,7 @@ var optionstemp = {
       curve: 'smooth',
       width: 3
     },
+    colors : ['#FF4F33'],
     markers: {
       size: 3
     },
