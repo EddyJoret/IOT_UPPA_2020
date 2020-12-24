@@ -5,12 +5,12 @@ var sidebarCloseIcon = document.getElementById("sidebarIcon");
 var datatemp = [];
 var datahygro = [];
 var datarfu = [];
-var datalum = [];
+var dataet = [];
 
 var moytemp = 0;
 var moyhygro = 0;
 var moyrfu = 0;
-var moylum = 0;
+var moyet = 0;
 
 var optionstemp = {
     series: [{
@@ -96,10 +96,10 @@ var optionsrfu = {
     }
 };
 
-var optionslum = {
+var optionset = {
     series: [{
-      name: 'Luminosité',
-      data: datalum
+      name: 'Évapotranspiration',
+      data: dataet
     }],
     chart: {
       type: 'line'
@@ -113,14 +113,14 @@ var optionslum = {
     },
     yaxis: {
         title: {
-            text: 'Luminosité (en %)'
+            text: 'Évapotranspiration (en %)'
         }
     },
     xaxis: {
       type: 'datetime'
     },
     title: {
-        text: 'Capteur luminosité'
+        text: 'Capteur évapotranspiration'
     }
 };
 
@@ -161,7 +161,7 @@ function initData(res){
         moytemp += parseInt(res.feeds[i].field2, 10);
         moyhygro += parseInt(res.feeds[i].field4, 10);
         moyrfu += parseInt(res.feeds[i].field5, 10);
-        moylum += parseInt(res.feeds[i].field3, 10);
+        moyet += parseInt(res.feeds[i].field3, 10);
 
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(texttemp);
@@ -175,26 +175,26 @@ function initData(res){
         var objrfu = JSON.parse(textrfu);
         datarfu.push(objrfu);
 
-        var textlum = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field3 + '\"}';
-        var objlum = JSON.parse(textlum);
-        datalum.push(objlum);
+        var textet = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field3 + '\"}';
+        var objet = JSON.parse(textet);
+        dataet.push(objet);
     }
 
     if(div != 0){
       moytemp /= div;
       moyhygro /= div;
       moyrfu /= div;
-      moylum /= div;
+      moyet /= div;
 
       moytemp = Math.ceil(moytemp);
       moyhygro = Math.ceil(moyhygro);
       moyrfu = Math.ceil(moyrfu);
-      moylum = Math.ceil(moylum);
+      moyet = Math.ceil(moyet);
     }else{
       moytemp = 0;
       moyhygro = 0;
       moyrfu = 0;
-      moylum = 0;
+      moyet = 0;
     }
 };
 
@@ -202,19 +202,19 @@ function initMoy(){
   document.getElementById("temp__text").textContent = moytemp + "°";
   document.getElementById("hygro__text").textContent = moyhygro + "%";
   document.getElementById("rfu__text").textContent = moyrfu + "%";
-  document.getElementById("lum__text").textContent = moylum + "%";
+  document.getElementById("et__text").textContent = moyet + "%";
 }
 
 function initGraph(){
     var charttemp = new ApexCharts(document.querySelector("#apex1"), optionstemp);
     var charthygro = new ApexCharts(document.querySelector("#apex2"), optionshygro);
     var chartrfu = new ApexCharts(document.querySelector("#apex3"), optionsrfu);
-    var chartlum = new ApexCharts(document.querySelector("#apex4"), optionslum);
+    var chartet = new ApexCharts(document.querySelector("#apex4"), optionset);
 
     charttemp.render();
     charthygro.render();
     chartrfu.render();
-    chartlum.render();
+    chartet.render();
 };
 
 function toggleSidebar() {
