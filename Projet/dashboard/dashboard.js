@@ -58,10 +58,7 @@ var options = {
         }
     },
     xaxis: {
-      type: 'datetime',
-      title: {
-          text: 'Dates et Heures'
-      }
+      type: 'datetime'
     },
     title: {
         text: 'Capteur température'
