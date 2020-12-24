@@ -4,12 +4,12 @@ var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
 var datatemp = [];
 var datahygro = [];
-var datahumsol = [];
+var datarfu = [];
 var datalum = [];
 
 var moytemp = 0;
 var moyhygro = 0;
-var moyhumsol = 0;
+var moyrfu = 0;
 var moylum = 0;
 
 var optionstemp = {
@@ -68,10 +68,10 @@ var optionshygro = {
     }
 };
 
-var optionshumsol = {
+var optionsrfu = {
     series: [{
       name: 'Humidité Sol',
-      data: datahumsol
+      data: datarfu
     }],
     chart: {
       type: 'line'
@@ -160,7 +160,7 @@ function initData(res){
 
         moytemp += parseInt(res.feeds[i].field2, 10);
         moyhygro += parseInt(res.feeds[i].field4, 10);
-        moyhumsol += parseInt(res.feeds[i].field5, 10);
+        moyrfu += parseInt(res.feeds[i].field5, 10);
         moylum += parseInt(res.feeds[i].field3, 10);
 
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
@@ -171,9 +171,9 @@ function initData(res){
         var objhygro = JSON.parse(texthygro);
         datahygro.push(objhygro);
 
-        var texthumsol = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field5 + '\"}';
-        var objhumsol = JSON.parse(texthumsol);
-        datahumsol.push(objhumsol);
+        var textrfu = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field5 + '\"}';
+        var objrfu = JSON.parse(textrfu);
+        datarfu.push(objrfu);
 
         var textlum = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field3 + '\"}';
         var objlum = JSON.parse(textlum);
@@ -183,17 +183,17 @@ function initData(res){
     if(div != 0){
       moytemp /= div;
       moyhygro /= div;
-      moyhumsol /= div;
+      moyrfu /= div;
       moylum /= div;
 
       moytemp = Math.ceil(moytemp);
       moyhygro = Math.ceil(moyhygro);
-      moyhumsol = Math.ceil(moyhumsol);
+      moyrfu = Math.ceil(moyrfu);
       moylum = Math.ceil(moylum);
     }else{
       moytemp = 0;
       moyhygro = 0;
-      moyhumsol = 0;
+      moyrfu = 0;
       moylum = 0;
     }
 };
@@ -201,19 +201,19 @@ function initData(res){
 function initMoy(){
   document.getElementById("temp__text").textContent = moytemp + "°";
   document.getElementById("hygro__text").textContent = moyhygro + "%";
-  document.getElementById("humsol__text").textContent = moyhumsol + "%";
+  document.getElementById("rfu__text").textContent = moyrfu + "%";
   document.getElementById("lum__text").textContent = moylum + "%";
 }
 
 function initGraph(){
     var charttemp = new ApexCharts(document.querySelector("#apex1"), optionstemp);
     var charthygro = new ApexCharts(document.querySelector("#apex2"), optionshygro);
-    var charthumsol = new ApexCharts(document.querySelector("#apex3"), optionshumsol);
+    var chartrfu = new ApexCharts(document.querySelector("#apex3"), optionsrfu);
     var chartlum = new ApexCharts(document.querySelector("#apex4"), optionslum);
 
     charttemp.render();
     charthygro.render();
-    charthumsol.render();
+    chartrfu.render();
     chartlum.render();
 };
 
