@@ -1,11 +1,11 @@
+var sidebarOpen = false;
+var sidebar = document.getElementById("sidebar");
+var sidebarCloseIcon = document.getElementById("sidebarIcon");
+
 var datatemp = [];
 var datahygro = [];
 var datahumsol = [];
 var datalum = [];
-
-var sidebarOpen = false;
-var sidebar = document.getElementById("sidebar");
-var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
 var optionstemp = {
     series: [{
