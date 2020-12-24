@@ -62,7 +62,12 @@ function initHtml(res){
 };
 
 function initData(res){
-    for(var i = 0; i < res.feeds.length; i++){
+    var deb = 0;
+    if(res.feeds.length > 12){
+        deb = res.feeds.length - 12;
+    }
+
+    for(var i = deb; i < res.feeds.length; i++){
         var text = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(text);
         tempdata.push(objtemp);
