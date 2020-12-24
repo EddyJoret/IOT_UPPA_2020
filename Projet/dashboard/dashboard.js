@@ -30,7 +30,10 @@ var optionstemp = {
     yaxis: {
         title: {
             text: 'Température (en degré C°)'
-        }
+        },
+        tickAmount: 8,
+        max: 40,
+        min: 0
     },
     xaxis: {
       type: 'datetime'
@@ -58,7 +61,9 @@ var optionshygro = {
     yaxis: {
         title: {
             text: 'Hygrométrie (en %)'
-        }
+        },
+        max: 100,
+        min: 0
     },
     xaxis: {
       type: 'datetime'
@@ -114,7 +119,9 @@ var optionset = {
     yaxis: {
         title: {
             text: 'Évapotranspiration (en %)'
-        }
+        },
+        max: 100,
+        min: 0
     },
     xaxis: {
       type: 'datetime'
