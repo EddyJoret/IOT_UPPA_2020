@@ -477,10 +477,6 @@ input:checked + .slider:after{
     margin-left: 50px;
 }
 
-input:checked + .switch::before{
-    display: none;
-}
-
 .slider.round {
   border-radius: 34px;
 }
