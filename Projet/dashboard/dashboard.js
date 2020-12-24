@@ -43,7 +43,7 @@ var options = {
       data: tempdata
     }],
     chart: {
-      type: 'line',
+      type: 'line'
     },
     stroke: {
       curve: 'smooth',
@@ -52,8 +52,19 @@ var options = {
     markers: {
       size: 3
     },
+    yaxis: {
+        title: {
+            text: 'Température (en degré)'
+        }
+    },
     xaxis: {
-      type: 'datetime'
+      type: 'datetime',
+      title: {
+          text: 'Dates et Heures'
+      }
+    },
+    title: {
+        text: 'Capteur température'
     }
 };
 
@@ -77,7 +88,6 @@ $(document).ready(function() {
 
 function initHtml(res){
     initData(res);
-    initOptions();
     initGraph();
 };
 
@@ -86,6 +96,8 @@ function initData(res){
         var text = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(text);
         tempdata.push(objtemp);
+
+
         console.log(text);
         console.log(objtemp);
 
@@ -97,11 +109,6 @@ function initData(res){
         lum.push(res.feeds[i].field3);
     }
     //console.log(tempdata);
-};
-
-function initOptions(){
-    /*options.series[0].data = temp;
-    options.xaxis.categories = heure;*/
 };
 
 function initGraph(){
