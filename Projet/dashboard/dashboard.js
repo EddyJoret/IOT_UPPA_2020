@@ -1,4 +1,6 @@
 var datatemp = [];
+var datahygro = [];
+var datahumsol = [];
 var datalum = [];
 
 var sidebarOpen = false;
@@ -36,7 +38,7 @@ var optionstemp = {
 var optionshygro = {
     series: [{
       name: 'Hygrométrie',
-      data: datatemp
+      data: datahygro
     }],
     chart: {
       type: 'line'
@@ -64,7 +66,7 @@ var optionshygro = {
 var optionshumsol = {
     series: [{
       name: 'Humidité Sol',
-      data: datatemp
+      data: datahumsol
     }],
     chart: {
       type: 'line'
@@ -150,6 +152,14 @@ function initData(res){
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(texttemp);
         datatemp.push(objtemp);
+
+        var texthygro = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field4 + '\"}';
+        var objhygro = JSON.parse(texthygro);
+        datahygro.push(objhygro);
+
+        var texthumsol = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field5 + '\"}';
+        var objhumsol = JSON.parse(texthumsol);
+        datahumsol.push(objhumsol);
 
         var textlum = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field3 + '\"}';
         var objlum = JSON.parse(textlum);
