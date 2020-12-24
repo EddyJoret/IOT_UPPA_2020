@@ -3,6 +3,7 @@ var sidebar = document.getElementById("sidebar");
 var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
 var datatemp = [];
+var datapluie = [];
 var datahygro = [];
 var datarfu = [];
 var dataet = [];
@@ -45,10 +46,17 @@ var optionstemp = {
 };
 
 var optionshygro = {
-    series: [{
-      name: 'Hygrométrie',
-      data: datahygro
-    }],
+    series: [
+      {
+        name: 'Hygrométrie',
+        data: datahygro
+      },
+      {
+        name: 'Pluie',
+        type: 'column',
+        data: datapluie
+      }
+    ],
     chart: {
       type: 'line'
     },
@@ -59,13 +67,23 @@ var optionshygro = {
     markers: {
       size: 3
     },
-    yaxis: {
+    yaxis: [
+      {
         title: {
             text: 'Hygrométrie (en %)'
         },
         max: 100,
         min: 0
-    },
+      },
+      {
+        title: {
+            text: 'Pluie'
+        },
+        opposite: true,
+        max: 1,
+        min: 0
+      }
+    ],
     xaxis: {
       type: 'datetime'
     },
@@ -174,6 +192,10 @@ function initData(res){
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(texttemp);
         datatemp.push(objtemp);
+
+        var textpluie = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field1 + '\"}';
+        var objpluie = JSON.parse(textpluie);
+        datapluie.push(objpluie);
 
         var texthygro = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field4 + '\"}';
         var objhygro = JSON.parse(texthygro);
