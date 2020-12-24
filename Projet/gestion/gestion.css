@@ -164,9 +164,10 @@ main {
   gap: 30px;
   margin: 20px 0;*/
   display: grid;
-  grid-template-columns: 0.8fr 0.8fr;
+  grid-template-columns: auto;
   gap: 30px;
   margin: 20px 0;
+  width: 70%;
 }
 
 .card {
