@@ -33,10 +33,10 @@
                 <a href="#">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </a>
-                <a href="#">
-                  <!--<i class="fa fa-clock-o" aria-hidden="true"></i>-->
+                <!--<a href="#">
                   <i class="far fa-adjust"></i>
-                </a>
+                </a>-->
+                <button onclick="myFunction()" style="border-radius: 50px; border: none; margin-left: 20px;"><i class="far fa-adjust"></i></button>
                 <a href="#">
                   <!--<img width="30" src="assets/avatar.svg" alt="" />-->
                   <!--<i class="fa fa-user-circle-o" aria-hidden="true"></i>-->
@@ -179,6 +179,15 @@
             </div>
           </div>
           <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-          <script type="text/javascript" src="parameter.js"></script>
+          <!--<script type="text/javascript" src="parameter.js"></script>-->
+          <script>
+            function myFunction() {
+               var element = document.body.children[0].children[1];
+               var element2 = document.body.children[0].children[0];
+               console.log(element2);
+               element.classList.toggle("dark-mode");
+               element2.classList.toggle("dark-mode");
+            }
+          </script>
     </body>
 </html>
