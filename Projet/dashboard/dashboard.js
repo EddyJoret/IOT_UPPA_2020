@@ -70,7 +70,7 @@ var optionshygro = {
 
 var optionsrfu = {
     series: [{
-      name: 'Humidité Sol',
+      name: 'RFU',
       data: datarfu
     }],
     chart: {
@@ -85,14 +85,14 @@ var optionsrfu = {
     },
     yaxis: {
         title: {
-            text: 'Humidité du sol (en %)'
+            text: 'RFU (en %)'
         }
     },
     xaxis: {
       type: 'datetime'
     },
     title: {
-        text: 'Capteur humidité du sol'
+        text: 'Capteur RFU'
     }
 };
 
