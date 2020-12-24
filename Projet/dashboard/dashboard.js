@@ -7,6 +7,11 @@ var datahygro = [];
 var datahumsol = [];
 var datalum = [];
 
+var moytemp = 0;
+var moyhygro = 0;
+var moyhumsol = 0;
+var moylum = 0;
+
 var optionstemp = {
     series: [{
       name: 'Température',
@@ -139,16 +144,25 @@ $(document).ready(function() {
 
 function initHtml(res){
     initData(res);
+    initMoy();
     initGraph();
 };
 
 function initData(res){
+    var div = 0;
     var deb = 0;
     if(res.feeds.length > 24){
         deb = res.feeds.length - 24;
     }
 
     for(var i = deb; i < res.feeds.length; i++){
+        div++;
+
+        moytemp += parseInt(res.feeds[i].field2, 10);
+        moyhygro += parseInt(res.feeds[i].field4, 10);
+        moyhumsol += parseInt(res.feeds[i].field5, 10);
+        moylum += parseInt(res.feeds[i].field3, 10);
+
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(texttemp);
         datatemp.push(objtemp);
@@ -165,7 +179,31 @@ function initData(res){
         var objlum = JSON.parse(textlum);
         datalum.push(objlum);
     }
+
+    if(div != 0){
+      moytemp /= div;
+      moyhygro /= div;
+      moyhumsol /= div;
+      moylum /= div;
+
+      moytemp = Math.ceil(moytemp);
+      moyhygro = Math.ceil(moyhygro);
+      moyhumsol = Math.ceil(moyhumsol);
+      moylum = Math.ceil(moylum);
+    }else{
+      moytemp = 0;
+      moyhygro = 0;
+      moyhumsol = 0;
+      moylum = 0;
+    }
 };
+
+function initMoy(){
+  document.getElementById("temp__text").textContent = moytemp + "°";
+  document.getElementById("hygro__text").textContent = moyhygro + "%";
+  document.getElementById("humsol__text").textContent = moyhumsol + "%";
+  document.getElementById("lum__text").textContent = moylum + "%";
+}
 
 function initGraph(){
     var charttemp = new ApexCharts(document.querySelector("#apex1"), optionstemp);
