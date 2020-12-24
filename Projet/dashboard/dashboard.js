@@ -186,10 +186,10 @@ function initData(res){
       moyrfu /= div;
       moyet /= div;
 
-      moytemp = Math.ceil(moytemp);
-      moyhygro = Math.ceil(moyhygro);
-      moyrfu = Math.ceil(moyrfu);
-      moyet = Math.ceil(moyet);
+      moytemp = Math.ceil(moytemp*10)/10;
+      moyhygro = Math.ceil(moyhygro*10)/10;
+      moyrfu = Math.ceil(moyrfu*10)/10;
+      moyet = Math.ceil(moyet*10)/10;
     }else{
       moytemp = 0;
       moyhygro = 0;
