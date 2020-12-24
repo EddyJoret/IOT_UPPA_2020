@@ -467,6 +467,11 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
+input:checked + .slider:after{
+    content: "ON";
+    margin-left: 50px;
+}
+
 .slider.round {
   border-radius: 34px;
 }

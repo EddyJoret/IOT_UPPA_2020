@@ -33,13 +33,8 @@
                 <a href="#">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </a>
-                <!--<a href="#">
-                  <i class="far fa-adjust"></i>
-                </a>-->
                 <button onclick="myFunction()" style="border-radius: 50px; border: none; margin-left: 20px;"><i class="far fa-adjust"></i></button>
                 <a href="#">
-                  <!--<img width="30" src="assets/avatar.svg" alt="" />-->
-                  <!--<i class="fa fa-user-circle-o" aria-hidden="true"></i>-->
                   <i class="fal fa-user-circle"></i>
                 </a>
               </div>
@@ -50,8 +45,7 @@
                 <!-- MAIN TITLE STARTS HERE -->
                 <div class="main__title">
                   <div class="main__greeting">
-                    <h1>Paramètres</h1>
-                    <!--<p>Welcome to your admin dashboard</p>-->
+                    <h1>Capteurs</h1>
                   </div>
                 </div>
                 <!-- MAIN TITLE ENDS HERE -->
@@ -61,75 +55,16 @@
                 <div class="main__cards">
                   <div class="card">
                     <div class="card_inner">
-                      <h2 style="margin-bottom: 20px;">Général</h2>
-
-                      <p class="text-lightblue">Nom</p>
-                      <p class="text-primary-p" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">Dupont</p>
-
-                      <p class="text-lightblue">Prénom</p>
-                      <p class="text-primary-p" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">Jean</p>
-
-                      <p class="text-lightblue">Email</p>
-                      <p class="text-primary-p" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">projetiot@gmail.com</p>
-
-                      <p class="text-lightblue">Numéro de téléphone</p>
-                      <p class="text-primary-p" style="display: flex; justify-content: flex-end;">06.00.00.00.00</p>
-                    </div>
-                  </div>
-
-                  <div class="card">
-
-                    <div class="card_inner">
-                      <h2 style="margin-bottom: 20px;">Mot de passe</h2>
-                      <p class="text-lightblue" style="margin-bottom: 10px;">Ancien mot de passe</p>
-                      <input type="password" style="margin-bottom: 10px;">
-
-                      <p class="text-lightblue" style="margin-bottom: 10px;">Nouveau mot de passe</p>
-                      <input type="password" style="margin-bottom: 10px;">
-
-                      <p class="text-lightblue" style="margin-bottom: 10px;">Saisir à nouveau le nouveau mot de passe</p>
-                      <input type="password" style="margin-bottom: 10px;">
-                      <div class="button-save">
-                        <button class="btn-save">Sauvegarder</button>
+                      <h3>Capteur température</h3>
+                      <div class="switch-wrapper" style="margin-top: 30px;">
+                        <label class="switch" for="checkbox">
+                          <input type="checkbox" id="checkbox"/>
+                          <div class="slider round"></div>
+                        </label>
                       </div>
+                      <p class="text-primary-p purc-batt" style="margin-top: 20px;">Batterie : 90%</p>
                     </div>
                   </div>
-
-                  <div class="card">
-                    <div class="card_inner">
-                      <h2 style="margin-bottom: 20px;">Notifications</h2>
-
-                      <h4>Activité</h4>
-                      <table style="width: 100%;">
-                        <tr>
-                          <td><p class="text-primary-p">Envoyer un email lorsque..</p></td>
-                          <td style="text-align: right;">
-                            <div class="switch-wrapper">
-                              <label class="switch" for="checkbox">
-                                <input type="checkbox" id="checkbox"/>
-                                <div class="slider round"></div>
-                              </label>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr></tr>
-                        <tr></tr>
-                        <tr>
-                          <td><p class="text-primary-p">Activer les notifications sur le téléphone</p></td>
-                          <td style="text-align: right;">
-                            <div class="switch-wrapper">
-                              <label class="switch" for="checkbox2">
-                                <input type="checkbox" id="checkbox2"/>
-                                <div class="slider round"></div>
-                              </label>
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-
-
                 <!-- MAIN CARDS ENDS HERE -->
               </div>
             </main>
@@ -137,7 +72,6 @@
             <div id="sidebar">
               <div class="sidebar__title">
                 <div class="sidebar__img">
-                  <!--<img src="assets/logo.png" alt="logo" />-->
                   <h1>Projet IOT</h1>
                 </div>
                 <i
@@ -154,7 +88,6 @@
                   <a href="../dashboard/dashboard.html">Dashboard</a>
                 </div>
                 <div class="sidebar__link">
-                  <!--<i class="fa fa-building-o"></i>-->
                   <i class="fal fa-building"></i>
                   <a href="../gestion/gestion.html">Gestion de la ferme</a>
                 </div>
@@ -164,7 +97,7 @@
                   </div>
                 <div class="sidebar__link">
                   <i class="fa fa-wrench"></i>
-                  <a href="#">Paramètres</a>
+                  <a href="../parameter/parameter.html">Paramètres</a>
                 </div>
                 <!--<h2>LEAVE</h2>-->
                 <div class="sidebar__link">
