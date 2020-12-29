@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-    <link rel="stylesheet" type="text/css" href="gestion.css">
+    <link rel="stylesheet" type="text/css" href="contact.css">
     <title>CSS GRID DASHBOARD</title>
 
     </head>
@@ -27,18 +27,16 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
               </div>
               <div class="navbar__left">
-                <a id="parc1" class="active_link" href="#">Parcelle 1</a>
-                <a id="parc2" class="" href="#" onclick="dataParc2()">Parcelle 2</a>
-                <a id="parc3" class="" href="#" onclick="dataParc3()">Parcelle 3</a>
+                
               </div>
               <div class="navbar__right">
                 <a href="#">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </a>
-                <a href="#">
-                  <!--<i class="fa fa-clock-o" aria-hidden="true"></i>-->
+                <!--<a href="#">
                   <i class="far fa-adjust"></i>
-                </a>
+                </a>-->
+                <button onclick="myFunction()" style="border-radius: 50px; border: none; margin-left: 20px;"><i class="far fa-adjust"></i></button>
                 <a href="#">
                   <!--<img width="30" src="assets/avatar.svg" alt="" />-->
                   <!--<i class="fa fa-user-circle-o" aria-hidden="true"></i>-->
@@ -50,82 +48,88 @@
             <main>
               <div class="main__container">
                 <!-- MAIN TITLE STARTS HERE -->
-
                 <div class="main__title">
                   <div class="main__greeting">
-                    <h1>Gestion de la ferme</h1>
+                    <h1>Nous contacter</h1>
                     <!--<p>Welcome to your admin dashboard</p>-->
                   </div>
                 </div>
-
                 <!-- MAIN TITLE ENDS HERE -->
+
 
                 <!-- MAIN CARDS STARTS HERE -->
                 <div class="main__cards">
                   <div class="card">
                     <div class="card_inner">
-                      <h2 id="h" style="margin-bottom: 20px;">Irrigation de la parcelle 1</h2>
-                      <table>
-                        <tr>
-                          <td><h4>Nombre d'irrigations réalisées:</h4></td>
-                          <td><p id="nir" style="margin-left: 20px;">2</p></td>
-                        </tr>
-                        <tr></tr>
-                        <tr></tr>
-                        <tr>
-                          <td><h4>Volume consommé: </h4></td>
-                          <td><p id="vc" style="margin-left: 20px;">50mm</p></td>
-                        </tr>
-                        <tr></tr>
-                        <tr></tr>
-                        <tr>
-                          <td><h4>Dernière irigation effectuée: </h4></td>
-                          <td><p id="die" style="margin-left: 20px;">8j</p></td>
-                        </tr>
-                        <tr></tr>
-                        <tr></tr>
-                        <tr>
-                          <td><p class="text-primary-p">22 décembre 2020</p></td>
-                          <td><p class="text-primary-p">25mm</p></td>
-                        </tr>
-                      </table>
+                      <h2 style="margin-bottom: 20px;">Général</h2>
 
-                    </div>
-                    <!--<p class="text-primary-p">Nombre d'irrigations réalisées</p>-->
-                    <div class="button-gerer">
-                      <button class="btn-gere">Gérer</button>
-                    </div>
+                      <p class="text-lightblue">Nom</p>
+                      <p class="text-primary-p" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">Dupont</p>
 
+                      <p class="text-lightblue">Prénom</p>
+                      <p class="text-primary-p" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">Jean</p>
+
+                      <p class="text-lightblue">Email</p>
+                      <p class="text-primary-p" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">projetiot@projetiot.com</p>
+
+                      <p class="text-lightblue">Numéro de téléphone</p>
+                      <p class="text-primary-p" style="display: flex; justify-content: flex-end;">06.00.00.00.00</p>
+                    </div>
                   </div>
+
+                  <div class="card">
+
+                    <div class="card_inner">
+                      <h2 style="margin-bottom: 20px;">Mot de passe</h2>
+                      <p class="text-lightblue" style="margin-bottom: 10px;">Ancien mot de passe</p>
+                      <input type="password" style="margin-bottom: 10px;">
+
+                      <p class="text-lightblue" style="margin-bottom: 10px;">Nouveau mot de passe</p>
+                      <input type="password" style="margin-bottom: 10px;">
+
+                      <p class="text-lightblue" style="margin-bottom: 10px;">Saisir à nouveau le nouveau mot de passe</p>
+                      <input type="password" style="margin-bottom: 10px;">
+                      <div class="button-save">
+                        <button class="btn-save">Sauvegarder</button>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="card">
                     <div class="card_inner">
-                      <h2 style="margin-bottom: 20px;">Précipitations</h2>
+                      <h2 style="margin-bottom: 20px;">Notifications</h2>
 
-                      <h4>Dernières précipitations constatées</h4>
-                      <br>
-                      <table>
+                      <h4>Activité</h4>
+                      <table style="width: 100%;">
                         <tr>
-                          <td><p class="text-primary-p">19 décembre 2020</p></td>
-                          <td><p class="text-primary-p" style="margin-left: 80px;">2mm</p></td>
+                          <td><p class="text-primary-p">Envoyer un email lorsque..</p></td>
+                          <td style="text-align: right;">
+                            <div class="switch-wrapper">
+                              <label class="switch" for="checkbox">
+                                <input type="checkbox" id="checkbox"/>
+                                <div class="slider round"></div>
+                              </label>
+                            </div>
+                          </td>
                         </tr>
                         <tr></tr>
                         <tr></tr>
                         <tr>
-                          <td><p class="text-primary-p">20 décembre 2020</p></td>
-                          <td><p class="text-primary-p" style="margin-left: 80px;">10mm</p></td>
-                        </tr>
-                        <tr></tr>
-                        <tr></tr>
-                        <tr>
-                          <td><p class="text-primary-p">21 décembre 2020</p></td>
-                          <td><p class="text-primary-p" style="margin-left: 80px;">1mm</p></td>
+                          <td><p class="text-primary-p">Activer les notifications sur le téléphone</p></td>
+                          <td style="text-align: right;">
+                            <div class="switch-wrapper">
+                              <label class="switch" for="checkbox2">
+                                <input type="checkbox" id="checkbox2"/>
+                                <div class="slider round"></div>
+                              </label>
+                            </div>
+                          </td>
                         </tr>
                       </table>
                     </div>
-                    <div class="button-gerer">
-                      <button class="btn-gere">Gérer</button>
-                    </div>
                   </div>
+
+
                 <!-- MAIN CARDS ENDS HERE -->
               </div>
             </main>
@@ -149,10 +153,10 @@
                   <i class="fa fa-home"></i>
                   <a href="../dashboard/dashboard.html">Dashboard</a>
                 </div>
-                <div class="sidebar__link active_menu_link">
+                <div class="sidebar__link">
                   <!--<i class="fa fa-building-o"></i>-->
                   <i class="fal fa-building"></i>
-                  <a href="#">Gestion de la ferme</a>
+                  <a href="../gestion/gestion.html">Gestion de la ferme</a>
                 </div>
                 <div class="sidebar__link">
                     <i class="fa fa-archive"></i>
@@ -163,9 +167,9 @@
                   <a href="../parameter/parameter.html">Paramètres</a>
                 </div>
                 <!--<h2>LEAVE</h2>-->
-                <div class="sidebar__link">
+                <div class="sidebar__link active_menu_link">
                   <i class="fa fa-question"></i>
-                  <a href="../contact/contact.html">Nous contacter</a>
+                  <a href="#">Nous contacter</a>
                 </div>
                 <div class="sidebar__logout">
                   <i class="fa fa-power-off"></i>
@@ -175,6 +179,15 @@
             </div>
           </div>
           <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-          <script type="text/javascript" src="gestion.js"></script>
+          <!--<script type="text/javascript" src="parameter.js"></script>-->
+          <script>
+            function myFunction() {
+               var element = document.body.children[0].children[1];
+               var element2 = document.body.children[0].children[0];
+               console.log(element2);
+               element.classList.toggle("dark-mode");
+               element2.classList.toggle("dark-mode");
+            }
+          </script>
     </body>
 </html>
