@@ -204,6 +204,20 @@ $(document).ready(function() {
             $('#errors').text("There was an error processing your request. Please try again.");
         }
     });
+    $.ajax({
+        url: 'https://api.thingspeak.com/channels/1273038/feeds.json?api_key=CP02P7NYYDWERCCG',
+        type: 'GET',
+        dataType: "json",
+        data: {
+            format: 'json'
+        },
+        success: function(response) {
+            initData(response, 3);
+        },
+        error: function() {
+            $('#errors').text("There was an error processing your request. Please try again.");
+        }
+    });
 });
 
 function initHtml(res, num) {
