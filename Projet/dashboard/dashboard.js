@@ -2,21 +2,45 @@ var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
 var sidebarCloseIcon = document.getElementById("sidebarIcon");
 
-var datatemp = [];
-var datapluie = [];
-var datahygro = [];
-var datarfu = [];
-var dataet = [];
+var parc1temp = [];
+var parc1pluie = [];
+var parc1hygro = [];
+var parc1rfu = [];
+var parc1et = [];
+var parc1moytemp = 0;
+var parc1moyhygro = 0;
+var parc1moyrfu = 0;
+var parc1moyet = 0;
 
-var moytemp = 0;
-var moyhygro = 0;
-var moyrfu = 0;
-var moyet = 0;
+var parc2temp = [];
+var parc2pluie = [];
+var parc2hygro = [];
+var parc2rfu = [];
+var parc2et = [];
+var parc2moytemp = 0;
+var parc2moyhygro = 0;
+var parc2moyrfu = 0;
+var parc2moyet = 0;
+
+var parc3temp = [];
+var parc3pluie = [];
+var parc3hygro = [];
+var parc3rfu = [];
+var parc3et = [];
+var parc3moytemp = 0;
+var parc3moyhygro = 0;
+var parc3moyrfu = 0;
+var parc3moyet = 0;
+
+var charttemp;
+var charthygro;
+var chartrfu;
+var chartet;
 
 var optionstemp = {
     series: [{
       name: 'Température',
-      data: datatemp
+      data: []
     }],
     chart: {
       type: 'line'
@@ -49,12 +73,12 @@ var optionshygro = {
     series: [
       {
         name: 'Hygrométrie',
-        data: datahygro
+        data: []
       },
       {
         name: 'Pluie',
         type: 'column',
-        data: datapluie
+        data: []
       }
     ],
     chart: {
@@ -96,7 +120,7 @@ var optionshygro = {
 var optionsrfu = {
     series: [{
       name: 'RFU',
-      data: datarfu
+      data: []
     }],
     chart: {
       type: 'line'
@@ -124,7 +148,7 @@ var optionsrfu = {
 var optionset = {
     series: [{
       name: 'Évapotranspiration',
-      data: dataet
+      data: []
     }],
     chart: {
       type: 'line'
@@ -160,8 +184,21 @@ $(document).ready(function() {
             format: 'json'
         },
         success: function(response) {
-            var res = response;
-            initHtml(res);
+            initHtml(response, 1);
+        },
+        error: function() {
+            $('#errors').text("There was an error processing your request. Please try again.");
+        }
+    });
+    $.ajax({
+        url: 'https://api.thingspeak.com/channels/1272998/feeds.json?api_key=9GGZJSGYAU160UOK',
+        type: 'GET',
+        dataType: "json",
+        data: {
+            format: 'json'
+        },
+        success: function(response) {
+            initData(response, 2);
         },
         error: function() {
             $('#errors').text("There was an error processing your request. Please try again.");
@@ -169,15 +206,20 @@ $(document).ready(function() {
     });
 });
 
-function initHtml(res){
-    initData(res);
-    initMoy();
-    initGraph();
+function initHtml(res, num) {
+    initData(res, num);
+    displayMoy(num);
+    displayGraph(num);
 };
 
-function initData(res){
-    var div = 0;
+function initData(res, num) {
     var deb = 0;
+
+    var div = 0;
+    var moytemp = 0;
+    var moyhygro = 0;
+    var moyrfu = 0;
+    var moyet = 0;
     if(res.feeds.length > 24){
         deb = res.feeds.length - 24;
     }
@@ -192,23 +234,45 @@ function initData(res){
 
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(texttemp);
-        datatemp.push(objtemp);
 
         var textpluie = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field1 + '\"}';
         var objpluie = JSON.parse(textpluie);
-        datapluie.push(objpluie);
 
         var texthygro = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field4 + '\"}';
         var objhygro = JSON.parse(texthygro);
-        datahygro.push(objhygro);
 
         var textrfu = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field5 + '\"}';
         var objrfu = JSON.parse(textrfu);
-        datarfu.push(objrfu);
 
         var textet = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field3 + '\"}';
         var objet = JSON.parse(textet);
-        dataet.push(objet);
+
+
+        switch(num){
+          case 1:
+            parc1temp.push(objtemp);
+            parc1pluie.push(objpluie);
+            parc1hygro.push(objhygro);
+            parc1rfu.push(objrfu);
+            parc1et.push(objet);
+            break;
+
+          case 2:
+            parc2temp.push(objtemp);
+            parc2pluie.push(objpluie);
+            parc2hygro.push(objhygro);
+            parc2rfu.push(objrfu);
+            parc2et.push(objet);
+            break;
+
+          case 3:
+            parc3temp.push(objtemp);
+            parc3pluie.push(objpluie);
+            parc3hygro.push(objhygro);
+            parc3rfu.push(objrfu);
+            parc3et.push(objet);
+            break;
+        }
     }
 
     if(div != 0){
@@ -216,37 +280,130 @@ function initData(res){
       moyhygro /= div;
       moyrfu /= div;
       moyet /= div;
-
-      moytemp = Math.ceil(moytemp*10)/10;
-      moyhygro = Math.ceil(moyhygro*10)/10;
-      moyrfu = Math.ceil(moyrfu*10)/10;
-      moyet = Math.ceil(moyet*10)/10;
     }else{
       moytemp = 0;
       moyhygro = 0;
       moyrfu = 0;
       moyet = 0;
     }
+
+    switch(num){
+      case 1:
+        parc1moytemp = Math.ceil(moytemp*10)/10;
+        parc1moyhygro = Math.ceil(moyhygro*10)/10;
+        parc1moyrfu = Math.ceil(moyrfu*10)/10;
+        parc1moyet = Math.ceil(moyet*10)/10;
+        break;
+
+      case 2:
+        parc2moytemp = Math.ceil(moytemp*10)/10;
+        parc2moyhygro = Math.ceil(moyhygro*10)/10;
+        parc2moyrfu = Math.ceil(moyrfu*10)/10;
+        parc2moyet = Math.ceil(moyet*10)/10;
+        break;
+
+      case 3:
+        parc3moytemp = Math.ceil(moytemp*10)/10;
+        parc3moyhygro = Math.ceil(moyhygro*10)/10;
+        parc3moyrfu = Math.ceil(moyrfu*10)/10;
+        parc3moyet = Math.ceil(moyet*10)/10;
+        break;
+    }
 };
 
-function initMoy(){
-  document.getElementById("temp__text").textContent = moytemp + "°";
-  document.getElementById("hygro__text").textContent = moyhygro + "%";
-  document.getElementById("rfu__text").textContent = moyrfu + "%";
-  document.getElementById("et__text").textContent = moyet + "%";
+function displayMoy(num) {
+    switch(num){
+      case 1:
+        document.getElementById("temp__text").textContent = parc1moytemp + "°";
+        document.getElementById("hygro__text").textContent = parc1moyhygro + "%";
+        document.getElementById("rfu__text").textContent = parc1moyrfu + "%";
+        document.getElementById("et__text").textContent = parc1moyet + "%";
+        break;
+
+      case 2:
+        document.getElementById("temp__text").textContent = parc2moytemp + "°";
+        document.getElementById("hygro__text").textContent = parc2moyhygro + "%";
+        document.getElementById("rfu__text").textContent = parc2moyrfu + "%";
+        document.getElementById("et__text").textContent = parc2moyet + "%";
+        break;
+
+      case 3:
+        document.getElementById("temp__text").textContent = parc3moytemp + "°";
+        document.getElementById("hygro__text").textContent = parc3moyhygro + "%";
+        document.getElementById("rfu__text").textContent = parc3moyrfu + "%";
+        document.getElementById("et__text").textContent = parc3moyet + "%";
+        break;
+    }
 }
 
-function initGraph(){
-    var charttemp = new ApexCharts(document.querySelector("#apex1"), optionstemp);
-    var charthygro = new ApexCharts(document.querySelector("#apex2"), optionshygro);
-    var chartrfu = new ApexCharts(document.querySelector("#apex3"), optionsrfu);
-    var chartet = new ApexCharts(document.querySelector("#apex4"), optionset);
+function displayGraph(num) {
+    optionstemp.series[0].data = parc1temp;
+    optionshygro.series[1].data = parc1pluie;
+    optionshygro.series[0].data = parc1hygro;
+    optionsrfu.series[0].data = parc1rfu;
+    optionset.series[0].data = parc1et;
+
+    charttemp = new ApexCharts(document.querySelector("#apex1"), optionstemp);
+    charthygro = new ApexCharts(document.querySelector("#apex2"), optionshygro);
+    chartrfu = new ApexCharts(document.querySelector("#apex3"), optionsrfu);
+    chartet = new ApexCharts(document.querySelector("#apex4"), optionset);
 
     charttemp.render();
     charthygro.render();
     chartrfu.render();
     chartet.render();
 };
+
+function changeGraph(num){
+    switch(num){
+      case 1:
+        optionstemp.series[0].data = parc1temp;
+        optionshygro.series[1].data = parc1pluie;
+        optionshygro.series[0].data = parc1hygro;
+        optionsrfu.series[0].data = parc1rfu;
+        optionset.series[0].data = parc1et;
+        break;
+
+      case 2:
+        optionstemp.series[0].data = parc2temp;
+        optionshygro.series[1].data = parc2pluie;
+        optionshygro.series[0].data = parc2hygro;
+        optionsrfu.series[0].data = parc2rfu;
+        optionset.series[0].data = parc2et;
+        break;
+
+      case 3:
+        optionstemp.series[0].data = parc3temp;
+        optionshygro.series[1].data = parc3pluie;
+        optionshygro.series[0].data = parc3hygro;
+        optionsrfu.series[0].data = parc3rfu;
+        optionset.series[0].data = parc3et;
+        break;
+    }
+
+    charttemp.updateOptions(optionstemp);
+    charthygro.updateOptions(optionshygro);
+    chartrfu.updateOptions(optionsrfu);
+    chartet.updateOptions(optionset);
+}
+
+function dataParc1(){
+    console.log("Parcelle 1");
+    displayMoy(1);
+    changeGraph(1);
+}
+
+function dataParc2(){
+    console.log("Parcelle 2");
+    displayMoy(2);
+    changeGraph(2);
+}
+
+function dataParc3(){
+    console.log("Parcelle 3");
+    displayMoy(3);
+    changeGraph(3);
+}
 
 function toggleSidebar() {
     if (!sidebarOpen) {
