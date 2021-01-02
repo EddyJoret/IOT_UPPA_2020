@@ -79,6 +79,11 @@ var optionstemp = {
     },
     title: {
       text: 'Capteur température'
+    },
+    tooltip: {
+      x: {
+        format: 'dd MMM HH:mm'
+      }
     }
 };
 
