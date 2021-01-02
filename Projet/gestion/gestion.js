@@ -62,5 +62,7 @@ function dataParc3(){
 }
 
 function valueInput(){
-    console.log(document.getElementById('datePrec').value);
+    var valueDate = document.getElementById('datePrec').value;
+    document.getElementById('result').innerHTML = valueDate;
+    document.getElementById('datePrec').value = ' ';
 }
