@@ -69,12 +69,10 @@ function valueInput(){
 
 function valueInputIrri(){
     var valueDate = document.getElementById('nbIrri').value;
-    var btn = document.getElementById('btn-valid');
-    btn.disabled = true;
-    /*if(valueDate == ''){
-        valueDate = document.getElementById('resultIrri').textContent;
-        console.log(document.getElementById('resultIrri').value);
+    if(valueDate == ''){
+        return false;
     }else{
         document.getElementById('resultIrri').innerHTML = valueDate;
-    }*/
+    }
+    document.getElementById('nbIrri').value = '';
 }
