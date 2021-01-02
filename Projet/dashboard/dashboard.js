@@ -146,6 +146,12 @@ var optionshygro = {
     },
     title: {
         text: 'Capteur hygrométrie'
+    },
+    tooltip: {
+      x: {
+        show: false,
+        format: 'dd MMM HH:mm'
+      }
     }
 };
 
@@ -214,6 +220,12 @@ var optionsru = {
     },
     title: {
       text: 'Capteur RU'
+    },
+    tooltip: {
+      x: {
+        show: false,
+        format: 'dd MMM HH:mm'
+      }
     }
 };
 
@@ -257,6 +269,12 @@ var optionset = {
     },
     title: {
       text: 'Capteur ETP'
+    },
+    tooltip: {
+      x: {
+        show: false,
+        format: 'dd MMM HH:mm'
+      }
     }
 };
 
