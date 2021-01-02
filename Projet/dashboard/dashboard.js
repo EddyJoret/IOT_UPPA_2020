@@ -82,6 +82,7 @@ var optionstemp = {
     },
     tooltip: {
       x: {
+        show: false,
         format: 'dd MMM HH:mm'
       }
     }
