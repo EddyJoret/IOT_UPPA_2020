@@ -84,6 +84,13 @@ var optionstemp = {
       x: {
         show: false,
         format: 'dd MMM HH:mm'
+      },
+      y: {
+        formatter: function(y) {
+          if(typeof y != "undefinied") {
+            return y.toFixed(0) + "°";
+          }
+        }
       }
     }
 };
@@ -146,6 +153,12 @@ var optionshygro = {
     },
     title: {
         text: 'Capteur hygrométrie'
+    },
+    tooltip: {
+      x: {
+        show: false,
+        format: 'dd MMM HH:mm'
+      }
     }
 };
 
@@ -214,6 +227,12 @@ var optionsru = {
     },
     title: {
       text: 'Capteur RU'
+    },
+    tooltip: {
+      x: {
+        show: false,
+        format: 'dd MMM HH:mm'
+      }
     }
 };
 
@@ -257,6 +276,12 @@ var optionset = {
     },
     title: {
       text: 'Capteur ETP'
+    },
+    tooltip: {
+      x: {
+        show: false,
+        format: 'dd MMM HH:mm'
+      }
     }
 };
 
