@@ -90,6 +90,7 @@ var optionstemp = {
           if(typeof y != "undefinied") {
             return y.toFixed(0) + "°";
           }
+          return y;
         }
       }
     }
@@ -158,7 +159,26 @@ var optionshygro = {
       x: {
         show: false,
         format: 'dd MMM HH:mm'
-      }
+      },
+      y: [{
+        formatter: function(y) {
+          if(typeof y != "undefinied") {
+            return y.toFixed(0) + "%";
+          }
+          return y;
+        }
+      },
+      {
+        formatter: function(y) {
+          if(typeof y != "undefinied") {
+            if(y == 1.0){
+              return "Il pleut, Il Pleut Bergère";
+            }
+            return Math.ceil(y);
+          }
+          return y;
+        }
+      }]
     }
 };
 
@@ -232,6 +252,14 @@ var optionsru = {
       x: {
         show: false,
         format: 'dd MMM HH:mm'
+      },
+      y: {
+        formatter: function(y) {
+          if(typeof y != "undefinied") {
+            return y.toFixed(0) + "mm";
+          }
+          return y;
+        }
       }
     }
 };
@@ -281,6 +309,14 @@ var optionset = {
       x: {
         show: false,
         format: 'dd MMM HH:mm'
+      },
+      y: {
+        formatter: function(y) {
+          if(typeof y != "undefinied") {
+            return y.toFixed(0) + "mm";
+          }
+          return y;
+        }
       }
     }
 };
