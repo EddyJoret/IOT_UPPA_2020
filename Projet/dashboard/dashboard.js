@@ -330,21 +330,21 @@ function displayMoy(num) {
       case 1:
         document.getElementById("temp__text").textContent = parc1moytemp + "°";
         document.getElementById("hygro__text").textContent = parc1moyhygro + "%";
-        document.getElementById("rfu__text").textContent = parc1moyrfu + "%";
+        document.getElementById("rfu__text").textContent = parc1moyrfu + "mm";
         document.getElementById("et__text").textContent = parc1moyet + "%";
         break;
 
       case 2:
         document.getElementById("temp__text").textContent = parc2moytemp + "°";
         document.getElementById("hygro__text").textContent = parc2moyhygro + "%";
-        document.getElementById("rfu__text").textContent = parc2moyrfu + "%";
+        document.getElementById("rfu__text").textContent = parc2moyrfu + "mm";
         document.getElementById("et__text").textContent = parc2moyet + "%";
         break;
 
       case 3:
         document.getElementById("temp__text").textContent = parc3moytemp + "°";
         document.getElementById("hygro__text").textContent = parc3moyhygro + "%";
-        document.getElementById("rfu__text").textContent = parc3moyrfu + "%";
+        document.getElementById("rfu__text").textContent = parc3moyrfu + "mm";
         document.getElementById("et__text").textContent = parc3moyet + "%";
         break;
     }
