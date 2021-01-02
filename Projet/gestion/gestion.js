@@ -69,18 +69,12 @@ function valueInput(){
 
 function valueInputIrri(){
     var valueDate = document.getElementById('nbIrri').value;
-    /*if(valueDate = ''){
+    var btn = document.getElementById('btn-valid');
+    btn.disabled = true;
+    /*if(valueDate == ''){
         valueDate = document.getElementById('resultIrri').textContent;
         console.log(document.getElementById('resultIrri').value);
     }else{
         document.getElementById('resultIrri').innerHTML = valueDate;
     }*/
-    document.getElementById('resultIrri').innerHTML = valueDate;
-    if(valueDate == 0 || valueDate == null){
-        var btn = document.getElementById('btn-valid');
-        btn.disabled = true;
-        return false;
-        //console.log(document.getElementById('resultIrri').textContent);
-        //document.getElementById('resultIrri').innerHTML = document.getElementById('resultIrri').textContent;
-    }
 }

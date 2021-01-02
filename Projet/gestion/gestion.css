@@ -202,6 +202,21 @@ input{
   margin-top: 10px;
 }
 
+.btn-gere{
+  font-size: 16px;
+  border-radius: 2em;
+  padding: 0.3em 1.2em;
+  background-color: #4eb5f1;
+  text-decoration: none;
+  border: none;
+  color: white;
+}
+
+.btn-gere:hover{
+  background-color: #4095c6;
+  cursor: pointer;
+}
+
 /*-------POPUP-------*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -262,6 +277,29 @@ input[type=number] {
   overflow: auto;
 }
 
+.button-valid{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-valid{
+  font-size: 16px;
+  border-radius: 2em;
+  padding: 0.3em 1.2em;
+  background-color: #4eb5f1;
+  text-decoration: none;
+  border: none;
+  color: white;
+}
+
+.btn-valid:hover{
+  background-color: #4095c6;
+  cursor: pointer;
+}
+
+.btn-valid:disabled{
+  opacity: 0.5;
+}
 
 
 /*  SIDEBAR STARTS HERE  */
@@ -371,40 +409,6 @@ input[type=number] {
   justify-content: flex-end;
 }
 
-.btn-gere{
-  font-size: 16px;
-  border-radius: 2em;
-  padding: 0.3em 1.2em;
-  background-color: #4eb5f1;
-  text-decoration: none;
-  border: none;
-  color: white;
-}
-
-.btn-gere:hover{
-  background-color: #4095c6;
-  cursor: pointer;
-}
-
-.button-valid{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-valid{
-  font-size: 16px;
-  border-radius: 2em;
-  padding: 0.3em 1.2em;
-  background-color: #4eb5f1;
-  text-decoration: none;
-  border: none;
-  color: white;
-}
-
-.btn-valid:hover{
-  background-color: #4095c6;
-  cursor: pointer;
-}
 
 @media only screen and (max-width: 978px) {
   .container {
