@@ -118,10 +118,12 @@ var optionshygro = {
 };
 
 var optionsru = {
-    series: [{
-      name: 'RU',
-      data: []
-    }],
+    series: [
+      {
+        name: 'RU',
+        data: []
+      }
+    ],
     chart: {
       type: 'line'
     },
@@ -139,6 +141,28 @@ var optionsru = {
     },
     xaxis: {
       type: 'datetime'
+    },
+    annotations: {
+      yaxis: [
+        {
+          y: 0.7,
+          y2: 0.9,
+          borderColor: '#000',
+          fillColor: '#FEB019',
+          label: {
+            text: 'Stress Hydrique'
+          }
+        },
+        {
+          y: 0.9,
+          y2: 1.2,
+          borderColor: '#000',
+          fillColor: '#007FFF',
+          label: {
+            text: 'Confort Hydrique'
+          }
+        }
+      ]
     },
     title: {
         text: 'Capteur RU'
