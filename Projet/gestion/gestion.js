@@ -63,15 +63,15 @@ function dataParc3(){
 
 function valueInput(){
     var valueDate = document.getElementById('datePrec').value;
-    document.getElementById('result').innerHTML = valueDate;
+    if(valueDate !== ''){
+        document.getElementById('result').innerHTML = valueDate;
+    }
     document.getElementById('datePrec').value = ' ';
 }
 
 function valueInputIrri(){
     var valueDate = document.getElementById('nbIrri').value;
-    if(valueDate == ''){
-        return false;
-    }else{
+    if(valueDate !== ''){
         document.getElementById('resultIrri').innerHTML = valueDate;
     }
     document.getElementById('nbIrri').value = '';
