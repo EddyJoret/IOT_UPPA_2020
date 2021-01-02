@@ -69,13 +69,14 @@ function valueInput(){
 
 function valueInputIrri(){
     var valueDate = document.getElementById('nbIrri').value;
-    if(valueDate = ' '){
-        console.log()
+    /*if(valueDate = ''){
         valueDate = document.getElementById('resultIrri').textContent;
+        console.log(document.getElementById('resultIrri').value);
     }else{
         document.getElementById('resultIrri').innerHTML = valueDate;
+    }*/
+    document.getElementById('resultIrri').innerHTML = valueDate;
+    if(valueDate.length == 0){
+        console.log(document.getElementById('resultIrri').textContent);
     }
-    document.getElementById('nbIrri').value = ' ';
-    
-    
 }
