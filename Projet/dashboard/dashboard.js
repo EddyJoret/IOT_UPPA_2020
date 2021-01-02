@@ -219,7 +219,7 @@ var optionsru = {
 
 var optionset = {
     series: [{
-      name: 'Évapotranspiration',
+      name: 'ETP',
       data: []
     }],
     chart: {
@@ -247,7 +247,7 @@ var optionset = {
     },
     yaxis: {
       title: {
-        text: 'Évapotranspiration (en %)'
+        text: 'ETP (en mm)'
       },
       max: 100,
       min: 0
@@ -256,7 +256,7 @@ var optionset = {
       type: 'datetime'
     },
     title: {
-      text: 'Capteur évapotranspiration'
+      text: 'Capteur ETP'
     }
 };
 
@@ -416,21 +416,21 @@ function displayMoy(num) {
         document.getElementById("temp__text").textContent = parc1moytemp + "°";
         document.getElementById("hygro__text").textContent = parc1moyhygro + "%";
         document.getElementById("ru__text").textContent = parc1moyru + "mm";
-        document.getElementById("et__text").textContent = parc1moyet + "%";
+        document.getElementById("et__text").textContent = parc1moyet + "mm";
         break;
 
       case 2:
         document.getElementById("temp__text").textContent = parc2moytemp + "°";
         document.getElementById("hygro__text").textContent = parc2moyhygro + "%";
         document.getElementById("ru__text").textContent = parc2moyru + "mm";
-        document.getElementById("et__text").textContent = parc2moyet + "%";
+        document.getElementById("et__text").textContent = parc2moyet + "mm";
         break;
 
       case 3:
         document.getElementById("temp__text").textContent = parc3moytemp + "°";
         document.getElementById("hygro__text").textContent = parc3moyhygro + "%";
         document.getElementById("ru__text").textContent = parc3moyru + "mm";
-        document.getElementById("et__text").textContent = parc3moyet + "%";
+        document.getElementById("et__text").textContent = parc3moyet + "mm";
         break;
     }
 }
