@@ -12,6 +12,11 @@ function dataParc1(){
     document.getElementById('nir').textContent = "2";
     document.getElementById('vc').textContent = "50mm";
     document.getElementById('die').textContent = "8j";
+
+    document.getElementById('titleParc').textContent = "Parcelle 1";
+    document.getElementById('variete').textContent = "Maïs Grain";
+    document.getElementById('flor').textContent = "Floraison femelle";
+    document.getElementById('dateSemis').textContent = "20/04/2020";
 }
 
 function dataParc2(){
@@ -28,6 +33,11 @@ function dataParc2(){
     document.getElementById('nir').textContent = "3";
     document.getElementById('vc').textContent = "65mm";
     document.getElementById('die').textContent = "5j";
+
+    document.getElementById('titleParc').textContent = "Parcelle 2";
+    document.getElementById('variete').textContent = "Maïs Waxy";
+    document.getElementById('flor').textContent = "Floraison femelle";
+    document.getElementById('dateSemis').textContent = "30/04/2020";
 }
 
 function dataParc3(){
@@ -44,4 +54,9 @@ function dataParc3(){
     document.getElementById('nir').textContent = "2";
     document.getElementById('vc').textContent = "58mm";
     document.getElementById('die').textContent = "7j";
+
+    document.getElementById('titleParc').textContent = "Parcelle 3";
+    document.getElementById('variete').textContent = "Maïs Grain";
+    document.getElementById('flor').textContent = "Floraison femelle";
+    document.getElementById('dateSemis').textContent = "15/04/2020";
 }
