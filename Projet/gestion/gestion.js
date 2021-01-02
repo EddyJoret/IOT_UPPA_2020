@@ -77,6 +77,9 @@ function valueInputIrri(){
     }*/
     document.getElementById('resultIrri').innerHTML = valueDate;
     if(valueDate.length == 0){
-        console.log(document.getElementById('resultIrri').textContent);
+        alert('vide');
+        return false;
+        //console.log(document.getElementById('resultIrri').textContent);
+        //document.getElementById('resultIrri').innerHTML = document.getElementById('resultIrri').textContent;
     }
 }
