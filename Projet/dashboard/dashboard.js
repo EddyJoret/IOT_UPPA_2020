@@ -137,7 +137,10 @@ var optionsru = {
     yaxis: {
         title: {
             text: 'RU (en mm)'
-        }
+        },
+        tickAmount: 20,
+        max: 2,
+        min: 0
     },
     xaxis: {
       type: 'datetime'
