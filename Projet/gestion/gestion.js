@@ -66,3 +66,16 @@ function valueInput(){
     document.getElementById('result').innerHTML = valueDate;
     document.getElementById('datePrec').value = ' ';
 }
+
+function valueInputIrri(){
+    var valueDate = document.getElementById('nbIrri').value;
+    if(valueDate = ' '){
+        console.log()
+        valueDate = document.getElementById('resultIrri').textContent;
+    }else{
+        document.getElementById('resultIrri').innerHTML = valueDate;
+    }
+    document.getElementById('nbIrri').value = ' ';
+    
+    
+}

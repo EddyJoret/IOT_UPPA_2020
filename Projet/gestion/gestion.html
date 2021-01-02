@@ -92,7 +92,7 @@
                       <table>
                         <tr>
                           <td><h4>Nombre d'irrigations réalisées:</h4></td>
-                          <td><p id="nir" style="margin-left: 20px;">2</p></td>
+                          <td><p id="nir" style="margin-left: 20px;"><span id="resultIrri">2</span></p></td>
                         </tr>
                         <tr></tr>
                         <tr></tr>
@@ -125,11 +125,13 @@
                         <a class="close" href="#">&times;</a>
                         <div class="content">
                           Nombre d'irrigations réalisées :
-                          <input type="text" style="margin-bottom: 10px;">
+                          <input type="number" style="margin-bottom: 10px;" id="nbIrri">
                           <br>
                           Volume consommé :
                           <input type="text" style="margin-bottom: 10px;">
-
+                        </div>
+                        <div class="button-valid">
+                          <a class="btn-valid" onclick="valueInputIrri()">Sauvegarder</a>
                         </div>
                       </div>
                     </div>
@@ -149,7 +151,7 @@
                         <tr>
                           <td><p class="text-primary-p">19 décembre 2020</p></td>
                           <td>
-                            <p class="text-primary-p" style="margin-left: 80px;"><span id="result">2</span>mm</p>
+                            <p class="text-primary-p" style="margin-left: 80px;">2mm</p>
                           </td>
                         </tr>
                         <tr></tr>
@@ -162,7 +164,7 @@
                         <tr></tr>
                         <tr>
                           <td><p class="text-primary-p">21 décembre 2020</p></td>
-                          <td><p class="text-primary-p" style="margin-left: 80px;">1mm</p></td>
+                          <td><p class="text-primary-p" style="margin-left: 80px;"><span id="result">1</span>mm</p></td>
                         </tr>
                       </table>
                     </div>
@@ -171,15 +173,15 @@
                     </div>
                     <div id="popup2" class="overlay">
                       <div class="popup">
-                        <h2>Précipitations</h2>
+                        <h2>Précipitations du 21 décembre 2020</h2>
                         <a class="close" href="#" onclick="valueInput()">&times;</a>
                         <div class="content">
-                          Date :
-                          <input type="text" style="margin-bottom: 10px;">
                           <br>
                           Précipation (en mm):
-                          <input type="text" style="margin-bottom: 10px;" id="datePrec">
-
+                          <input type="number" style="margin-bottom: 10px;" id="datePrec">
+                          <div class="button-valid">
+                            <a class="btn-valid">Sauvegarder</a>
+                          </div>
                         </div>
                       </div>
                     </div>
