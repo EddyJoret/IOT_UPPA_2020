@@ -171,9 +171,6 @@ var optionshygro = {
       {
         formatter: function(y) {
           if(typeof y != "undefinied") {
-            if(y == 1.0){
-              return "Il pleut, Il Pleut Bergère";
-            }
             return Math.ceil(y);
           }
           return y;
