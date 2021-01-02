@@ -84,6 +84,13 @@ var optionstemp = {
       x: {
         show: false,
         format: 'dd MMM HH:mm'
+      },
+      y: {
+        formatter: function(y) {
+          if(typeof y != "undefinied") {
+            return y.toFixed(0) + "°";
+          }
+        }
       }
     }
 };
