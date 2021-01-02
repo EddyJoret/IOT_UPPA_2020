@@ -76,8 +76,9 @@ function valueInputIrri(){
         document.getElementById('resultIrri').innerHTML = valueDate;
     }*/
     document.getElementById('resultIrri').innerHTML = valueDate;
-    if(valueDate.length == 0){
-        alert('vide');
+    if(valueDate == 0 || valueDate == null){
+        var btn = document.getElementById('btn-valid');
+        btn.disabled = true;
         return false;
         //console.log(document.getElementById('resultIrri').textContent);
         //document.getElementById('resultIrri').innerHTML = document.getElementById('resultIrri').textContent;
