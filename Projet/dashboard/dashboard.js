@@ -43,7 +43,20 @@ var optionstemp = {
       data: []
     }],
     chart: {
-      type: 'line'
+      type: 'line',
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 800,
+        animateGradually: {
+            enabled: true,
+            delay: 150
+        },
+        dynamicAnimation: {
+            enabled: true,
+            speed: 350
+        }
+      }
     },
     stroke: {
       curve: 'smooth',
@@ -54,18 +67,18 @@ var optionstemp = {
       size: 3
     },
     yaxis: {
-        title: {
-            text: 'Température (en degré C°)'
-        },
-        tickAmount: 8,
-        max: 40,
-        min: 0
+      title: {
+          text: 'Température (en degré C°)'
+      },
+      tickAmount: 8,
+      max: 40,
+      min: 0
     },
     xaxis: {
       type: 'datetime'
     },
     title: {
-        text: 'Capteur température'
+      text: 'Capteur température'
     }
 };
 
@@ -82,7 +95,20 @@ var optionshygro = {
       }
     ],
     chart: {
-      type: 'line'
+      type: 'line',
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 800,
+        animateGradually: {
+            enabled: true,
+            delay: 150
+        },
+        dynamicAnimation: {
+            enabled: true,
+            speed: 350
+        }
+      }
     },
     stroke: {
       curve: 'smooth',
@@ -125,7 +151,20 @@ var optionsru = {
       }
     ],
     chart: {
-      type: 'line'
+      type: 'line',
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 800,
+        animateGradually: {
+            enabled: true,
+            delay: 150
+        },
+        dynamicAnimation: {
+            enabled: true,
+            speed: 350
+        }
+      }
     },
     stroke: {
       curve: 'smooth',
@@ -135,12 +174,12 @@ var optionsru = {
       size: 3
     },
     yaxis: {
-        title: {
-            text: 'RU (en mm)'
-        },
-        tickAmount: 20,
-        max: 2,
-        min: 0
+      title: {
+        text: 'RU (en mm)'
+      },
+      tickAmount: 20,
+      max: 2,
+      min: 0
     },
     xaxis: {
       type: 'datetime'
@@ -168,7 +207,7 @@ var optionsru = {
       ]
     },
     title: {
-        text: 'Capteur RU'
+      text: 'Capteur RU'
     }
 };
 
@@ -178,7 +217,20 @@ var optionset = {
       data: []
     }],
     chart: {
-      type: 'line'
+      type: 'line',
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 800,
+        animateGradually: {
+            enabled: true,
+            delay: 150
+        },
+        dynamicAnimation: {
+            enabled: true,
+            speed: 350
+        }
+      }
     },
     stroke: {
       curve: 'smooth',
@@ -188,17 +240,17 @@ var optionset = {
       size: 3
     },
     yaxis: {
-        title: {
-            text: 'Évapotranspiration (en %)'
-        },
-        max: 100,
-        min: 0
+      title: {
+        text: 'Évapotranspiration (en %)'
+      },
+      max: 100,
+      min: 0
     },
     xaxis: {
       type: 'datetime'
     },
     title: {
-        text: 'Capteur évapotranspiration'
+      text: 'Capteur évapotranspiration'
     }
 };
 
