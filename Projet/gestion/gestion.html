@@ -64,6 +64,30 @@
                 <div class="main__cards">
                   <div class="card">
                     <div class="card_inner">
+                      <h2 style="margin-bottom: 20px;" id="titleParc">Parcelle 1</h2>
+                      <table>
+                        <tr>
+                          <td><h4>Variété: </h4></td>
+                          <td><p class="text-primary-p" id="variete" style="margin-left: 80px;">Maïs Grain</p></td>
+                        </tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr>
+                          <td><h4>Stade phénologique: </h4></td>
+                          <td><p class="text-primary-p" style="margin-left: 80px;" id="flor">Floraison femelle</p></td>
+                        </tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr>
+                          <td><h4>Semis: </h4></td>
+                          <td><p class="text-primary-p" style="margin-left: 80px;" id="dateSemis">20/04/2020</p></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card_inner">
                       <h2 id="h" style="margin-bottom: 20px;">Irrigation de la parcelle 1</h2>
                       <table>
                         <tr>
@@ -91,7 +115,6 @@
                       </table>
 
                     </div>
-                    <!--<p class="text-primary-p">Nombre d'irrigations réalisées</p>-->
                     <div class="button-gerer">
                       <a class="btn-gere" href="#popup1">Gérer</a>
                     </div>
@@ -119,9 +142,15 @@
                       <h4>Dernières précipitations constatées</h4>
                       <br>
                       <table>
-                        <tr>
+                        <!--<tr>
                           <td><p class="text-primary-p">19 décembre 2020</p></td>
                           <td><p class="text-primary-p" style="margin-left: 80px;">2mm</p></td>
+                        </tr>-->
+                        <tr>
+                          <td><p class="text-primary-p">19 décembre 2020</p></td>
+                          <td>
+                            <p class="text-primary-p" style="margin-left: 80px;"><span id="result">2</span>mm</p>
+                          </td>
                         </tr>
                         <tr></tr>
                         <tr></tr>
@@ -138,7 +167,21 @@
                       </table>
                     </div>
                     <div class="button-gerer">
-                      <button class="btn-gere">Gérer</button>
+                      <a class="btn-gere" href="#popup2">Gérer</a>
+                    </div>
+                    <div id="popup2" class="overlay">
+                      <div class="popup">
+                        <h2>Précipitations</h2>
+                        <a class="close" href="#" onclick="valueInput()">&times;</a>
+                        <div class="content">
+                          Date :
+                          <input type="text" style="margin-bottom: 10px;">
+                          <br>
+                          Précipation (en mm):
+                          <input type="text" style="margin-bottom: 10px;" id="datePrec">
+
+                        </div>
+                      </div>
                     </div>
                   </div>
                 <!-- MAIN CARDS ENDS HERE -->
