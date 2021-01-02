@@ -60,3 +60,7 @@ function dataParc3(){
     document.getElementById('flor').textContent = "Floraison femelle";
     document.getElementById('dateSemis').textContent = "15/04/2020";
 }
+
+function valueInput(){
+    console.log(document.getElementById('datePrec').value);
+}
