@@ -3,7 +3,7 @@ function loading(){
         document.getElementById('resultIrri').innerHTML = window.sessionStorage.getItem('P1Irri');
     }
     if(window.sessionStorage.getItem('P1Prec') !== null){
-        document.getElementById('resultPrec').innerHTML = window.sessionStorage.getItem('P1Prec');
+        document.getElementById('3ValPrec').innerHTML = window.sessionStorage.getItem('P1Prec');
     }
 }
 
@@ -28,6 +28,14 @@ function dataParc1(){
     }
     document.getElementById('vc').textContent = "50mm";
     document.getElementById('die').textContent = "8j";
+
+    document.getElementById('1ValPrec').textContent = "3mm";
+    document.getElementById('2ValPrec').textContent = "5mm";
+    if(window.sessionStorage.getItem('P1Prec') !== null){
+        document.getElementById('3ValPrec').textContent = window.sessionStorage.getItem('P1Prec');
+    }else{
+      document.getElementById('3ValPrec').textContent = "2mm";
+    }
 }
 
 function dataParc2(){
@@ -51,6 +59,14 @@ function dataParc2(){
     }
     document.getElementById('vc').textContent = "65mm";
     document.getElementById('die').textContent = "5j";
+
+    document.getElementById('1ValPrec').textContent = "12mm";
+    document.getElementById('2ValPrec').textContent = "14mm";
+    if(window.sessionStorage.getItem('P2Prec') !== null){
+        document.getElementById('3ValPrec').textContent = window.sessionStorage.getItem('P2Prec');
+    }else{
+      document.getElementById('3ValPrec').textContent = "11mm";
+    }
 }
 
 function dataParc3(){
@@ -74,19 +90,27 @@ function dataParc3(){
     }
     document.getElementById('vc').textContent = "58mm";
     document.getElementById('die').textContent = "7j";
+
+    document.getElementById('1ValPrec').textContent = "0mm";
+    document.getElementById('2ValPrec').textContent = "0mm";
+    if(window.sessionStorage.getItem('P3Prec') !== null){
+        document.getElementById('3ValPrec').textContent = window.sessionStorage.getItem('P3Prec');
+    }else{
+      document.getElementById('3ValPrec').textContent = "0mm";
+    }
 }
 
 function valueInput(){
     var active_page = document.getElementsByClassName('active_link')[0].getAttribute('id');
     var value = document.getElementById('Prec').value;
     if(value !== ''){
-        document.getElementById('resultPrec').innerHTML = value;
+        document.getElementById('3ValPrec').innerHTML = value+"mm";
         if(active_page == 'parc1'){
-            window.sessionStorage.setItem('P1Prec',value);
+            window.sessionStorage.setItem('P1Prec',value+"mm");
         }else if(active_page == 'parc2'){
-            window.sessionStorage.setItem('P2Prec',value);
+            window.sessionStorage.setItem('P2Prec',value+"mm");
         }else{
-            window.sessionStorage.setItem('P3Prec',value);
+            window.sessionStorage.setItem('P3Prec',value+"mm");
         }
     }
     document.getElementById('Prec').value = ' ';
