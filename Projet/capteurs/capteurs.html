@@ -20,14 +20,14 @@
     <title>CSS GRID DASHBOARD</title>
 
     </head>
-    <body id="body">
+    <body id="body" onload="loading()">
         <div class="container">
             <nav class="navbar">
               <div class="nav_icon" onclick="toggleSidebar()">
                 <i class="fa fa-bars" aria-hidden="true"></i>
               </div>
               <div class="navbar__left">
-                
+
               </div>
               <div class="navbar__right">
                 <a href="#">
@@ -57,13 +57,13 @@
                     <div class="card_inner">
                         <h3>Capteur température</h3>
                         <div class="onoffswitch1" style="margin-top: 20px;">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
                             <label class="onoffswitch-label" for="myonoffswitch">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>
                         </div>
-                      <p class="text-primary-p purc-batt1" style="margin-top: 20px; display: none;">Batterie : 90%</p>
+                      <p class="text-primary-p purc-batt1" style="margin-top: 20px; display: block;">Batterie : 95%</p>
                     </div>
                   </div>
 
@@ -71,41 +71,41 @@
                     <div class="card_inner">
                         <h3>Capteur hygrométrie</h3>
                         <div class="onoffswitch2" style="margin-top: 20px;">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" tabindex="0">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" tabindex="0" checked>
                             <label class="onoffswitch-label" for="myonoffswitch2">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>
                         </div>
-                      <p class="text-primary-p purc-batt2" style="margin-top: 20px; display: none;">Batterie : 90%</p>
+                      <p class="text-primary-p purc-batt2" style="margin-top: 20px; display: block;">Batterie : 93%</p>
                     </div>
                   </div>
 
                   <div class="card">
                     <div class="card_inner">
-                        <h3>Capteur humidité dans le sol</h3>
+                        <h3>Capteur réserve utile</h3>
                         <div class="onoffswitch3" style="margin-top: 20px;">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3" tabindex="0">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3" tabindex="0" checked>
                             <label class="onoffswitch-label" for="myonoffswitch3">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>
                         </div>
-                      <p class="text-primary-p purc-batt3" style="margin-top: 20px; display: none;">Batterie : 90%</p>
+                      <p class="text-primary-p purc-batt3" style="margin-top: 20px; display: block;">Batterie : 94%</p>
                     </div>
                   </div>
 
                   <div class="card">
                     <div class="card_inner">
-                        <h3>Capteur luminosité</h3>
+                        <h3>Capteur évapotranspiration</h3>
                         <div class="onoffswitch4" style="margin-top: 20px;">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch4" tabindex="0" >
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch4" tabindex="0" checked>
                             <label class="onoffswitch-label" for="myonoffswitch4">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>
                         </div>
-                      <p class="text-primary-p purc-batt4" style="margin-top: 20px; display: none;">Batterie : 90%</p>
+                      <p class="text-primary-p purc-batt4" style="margin-top: 20px; display: block;">Batterie : 95%</p>
                     </div>
                   </div>
                 <!-- MAIN CARDS ENDS HERE -->
@@ -154,50 +154,6 @@
               </div>
             </div>
           </div>
-          <!--<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>-->
-          <script>
-            function myFunction() {
-               var element = document.body.children[0].children[1];
-               var element2 = document.body.children[0].children[0];
-               console.log(element2);
-               element.classList.toggle("dark-mode");
-               element2.classList.toggle("dark-mode");
-            }
-
-            $(document).ready(function(){
-              $(".onoffswitch1 input").on("change", function(e) {
-                const isOn = e.currentTarget.checked;
-                if (isOn) {
-                  $(".purc-batt1").show();
-                } else {
-                  $(".purc-batt1").hide();
-                }
-              });
-              $(".onoffswitch2 input").on("change", function(e) {
-                const isOn = e.currentTarget.checked;
-                if (isOn) { 
-                  $(".purc-batt2").show();
-                } else {
-                  $(".purc-batt2").hide();
-                }
-              });
-              $(".onoffswitch3 input").on("change", function(e) {
-                const isOn = e.currentTarget.checked;
-                if (isOn) { 
-                  $(".purc-batt3").show();
-                } else {
-                  $(".purc-batt3").hide();
-                }
-              });
-              $(".onoffswitch4 input").on("change", function(e) {
-                const isOn = e.currentTarget.checked;
-                if (isOn) { 
-                  $(".purc-batt4").show();
-                } else {
-                  $(".purc-batt4").hide();
-                }
-              });
-            });
-          </script>
+          <script type="text/javascript" src="capteurs.js"></script>
     </body>
 </html>
