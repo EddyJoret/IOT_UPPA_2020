@@ -20,7 +20,7 @@
     <title>CSS GRID DASHBOARD</title>
 
     </head>
-    <body id="body">
+    <body id="body" onload="loading()">
         <div class="container">
             <nav class="navbar">
               <div class="nav_icon" onclick="toggleSidebar()">
@@ -99,7 +99,7 @@
                       <table>
                         <tr>
                           <td><h4>Nombre d'irrigations réalisées:</h4></td>
-                          <td><p id="nir" style="margin-left: 20px;"><span id="resultIrri">2</span></p></td>
+                          <td><p style="margin-left: 20px;"><span id="resultIrri">2</span></p></td>
                         </tr>
                         <tr></tr>
                         <tr></tr>
@@ -171,7 +171,7 @@
                         <tr></tr>
                         <tr>
                           <td><p class="text-primary-p">21 décembre 2020</p></td>
-                          <td><p class="text-primary-p" style="margin-left: 80px;"><span id="result">1</span>mm</p></td>
+                          <td><p class="text-primary-p" style="margin-left: 80px;"><span id="resultPrec">1</span>mm</p></td>
                         </tr>
                       </table>
                     </div>
@@ -185,7 +185,7 @@
                         <div class="content">
                           <br>
                           Précipation (en mm):
-                          <input type="number" style="margin-bottom: 10px;" id="datePrec">
+                          <input type="number" style="margin-bottom: 10px;" id="Prec">
                           <div class="button-valid">
                             <a class="btn-valid" href="#" onclick="valueInput()">Sauvegarder</a>
                           </div>
