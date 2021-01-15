@@ -1,15 +1,19 @@
 function loading(){
     if(window.sessionStorage.getItem('Switch1') == 'false'){
         document.getElementById('myonoffswitch').removeAttribute('checked');
+        document.getElementsByClassName('purc-batt1')[0].style.display = "none";
     }
     if(window.sessionStorage.getItem('Switch2') == 'false'){
         document.getElementById('myonoffswitch2').removeAttribute('checked');
+        document.getElementsByClassName('purc-batt2')[0].style.display = "none";
     }
     if(window.sessionStorage.getItem('Switch3') == 'false'){
         document.getElementById('myonoffswitch3').removeAttribute('checked');
+        document.getElementsByClassName('purc-batt3')[0].style.display = "none";
     }
     if(window.sessionStorage.getItem('Switch4') == 'false'){
         document.getElementById('myonoffswitch4').removeAttribute('checked');
+        document.getElementsByClassName('purc-batt4')[0].style.display = "none";
     }
 }
 
