@@ -2,19 +2,19 @@ function loading(){
   document.getElementById('myonoffswitch').attributes.setNamedItem(document.createAttribute("checked"));
   console.log(document.getElementById('myonoffswitch').attributes);
     if(window.sessionStorage.getItem('Switch1.1') == 'false'){
-        document.getElementById('myonoffswitch').removeAttribute('checked');
+        document.getElementById('myonoffswitch').checked = false;
         document.getElementsByClassName('purc-batt1')[0].style.display = "none";
     }
     if(window.sessionStorage.getItem('Switch1.2') == 'false'){
-        document.getElementById('myonoffswitch2').removeAttribute('checked');
+        document.getElementById('myonoffswitch2').checked = false;
         document.getElementsByClassName('purc-batt2')[0].style.display = "none";
     }
     if(window.sessionStorage.getItem('Switch1.3') == 'false'){
-        document.getElementById('myonoffswitch3').removeAttribute('checked');
+        document.getElementById('myonoffswitch3').checked = false;
         document.getElementsByClassName('purc-batt3')[0].style.display = "none";
     }
     if(window.sessionStorage.getItem('Switch1.4') == 'false'){
-        document.getElementById('myonoffswitch4').removeAttribute('checked');
+        document.getElementById('myonoffswitch4').checked = false;
         document.getElementsByClassName('purc-batt4')[0].style.display = "none";
     }
 }
@@ -147,31 +147,31 @@ function dataParc1(){
     document.getElementById('parc3').classList.remove("active_link");
 
     if(window.sessionStorage.getItem('Switch1.1') == 'false'){
-        document.getElementById('myonoffswitch').removeAttribute('checked');
+        document.getElementById('myonoffswitch').checked = false;
         document.getElementsByClassName('purc-batt1')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch').checked = true;
         document.getElementsByClassName('purc-batt1')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch1.2') == 'false'){
-        document.getElementById('myonoffswitch2').removeAttribute('checked');
+        document.getElementById('myonoffswitch2').checked = false;
         document.getElementsByClassName('purc-batt2')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch2').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch2').checked = true;
         document.getElementsByClassName('purc-batt2')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch1.3') == 'false'){
-        document.getElementById('myonoffswitch3').removeAttribute('checked');
+        document.getElementById('myonoffswitch3').checked = false;
         document.getElementsByClassName('purc-batt3')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch3').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch3').checked = true;;
         document.getElementsByClassName('purc-batt3')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch1.4') == 'false'){
-        document.getElementById('myonoffswitch4').removeAttribute('checked');
+        document.getElementById('myonoffswitch4').checked = false;
         document.getElementsByClassName('purc-batt4')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch4').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch4').checked = true;
         document.getElementsByClassName('purc-batt4')[0].style.display = "block";
     }
 }
@@ -185,31 +185,31 @@ function dataParc2(){
     document.getElementById('parc3').classList.remove("active_link");
 
     if(window.sessionStorage.getItem('Switch2.1') == 'false'){
-        document.getElementById('myonoffswitch').removeAttribute('checked');
+        document.getElementById('myonoffswitch').checked = false;
         document.getElementsByClassName('purc-batt1')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch').checked = true;
         document.getElementsByClassName('purc-batt1')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch2.2') == 'false'){
-        document.getElementById('myonoffswitch2').removeAttribute('checked');
+        document.getElementById('myonoffswitch2').checked = false;
         document.getElementsByClassName('purc-batt2')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch2').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch2').checked = true;
         document.getElementsByClassName('purc-batt2')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch2.3') == 'false'){
-        document.getElementById('myonoffswitch3').removeAttribute('checked');
+        document.getElementById('myonoffswitch3').checked = false;
         document.getElementsByClassName('purc-batt3')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch3').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch3').checked = true;
         document.getElementsByClassName('purc-batt3')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch2.4') == 'false'){
-        document.getElementById('myonoffswitch4').removeAttribute('checked');
+        document.getElementById('myonoffswitch4').checked = false;
         document.getElementsByClassName('purc-batt4')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch4').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch4').checked = true;
         document.getElementsByClassName('purc-batt4')[0].style.display = "block";
     }
 }
@@ -223,31 +223,31 @@ function dataParc3(){
     document.getElementById('parc3').classList.add("active_link");
 
     if(window.sessionStorage.getItem('Switch3.1') == 'false'){
-        document.getElementById('myonoffswitch').removeAttribute('checked');
+        document.getElementById('myonoffswitch').checked = false;
         document.getElementsByClassName('purc-batt1')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch').checked = true;
         document.getElementsByClassName('purc-batt1')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch3.2') == 'false'){
-        document.getElementById('myonoffswitch2').removeAttribute('checked');
+        document.getElementById('myonoffswitch2').checked = false;
         document.getElementsByClassName('purc-batt2')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch2').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch2').checked = true;
         document.getElementsByClassName('purc-batt2')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch3.3') == 'false'){
-        document.getElementById('myonoffswitch3').removeAttribute('checked');
+        document.getElementById('myonoffswitch3').checked = false;
         document.getElementsByClassName('purc-batt3')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch3').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch3').checked = true;
         document.getElementsByClassName('purc-batt3')[0].style.display = "block";
     }
     if(window.sessionStorage.getItem('Switch3.4') == 'false'){
-        document.getElementById('myonoffswitch4').removeAttribute('checked');
+        document.getElementById('myonoffswitch4').checked = false;
         document.getElementsByClassName('purc-batt4')[0].style.display = "none";
     }else{
-        document.getElementById('myonoffswitch4').attributes.setNamedItem(document.createAttribute("checked"));
+        document.getElementById('myonoffswitch4').checked = true;
         document.getElementsByClassName('purc-batt4')[0].style.display = "block";
     }
 }
