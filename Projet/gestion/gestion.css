@@ -302,6 +302,30 @@ input[type=number] {
   opacity: 0.5;
 }
 
+/*----------------------------------Popup parcelle--------------------------------------------*/
+#parc1 .tooltiptext, #parc2 .tooltiptext, #parc3 .tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  /*background-color: #c2c2c2;*/
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  border: 1px solid #ededed;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 6%;
+  margin-left: -105px;
+}
+
+#parc1:hover .tooltiptext, #parc2:hover .tooltiptext, #parc3:hover .tooltiptext {
+  visibility: visible;
+}
+/*------------------------------------------------------------------------------*/
+
 
 /*  SIDEBAR STARTS HERE  */
 
