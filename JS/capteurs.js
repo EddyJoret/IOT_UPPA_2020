@@ -270,10 +270,3 @@ function closeSidebar() {
     }
 };
 
-function myFunction() {
-   var element = document.body.children[0].children[1];
-   var element2 = document.body.children[0].children[0];
-   console.log(element2);
-   element.classList.toggle("dark-mode");
-   element2.classList.toggle("dark-mode");
-}
