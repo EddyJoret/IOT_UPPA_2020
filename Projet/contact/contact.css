@@ -177,25 +177,41 @@ main {
   display: flex;
   align-items: center;
   margin-left: 40px;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 40px;
 }
 .card {
   background: #ffffff;
   padding: 25px;
   border-radius: 5px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+  border: 1px solid grey;
 }
 
 .card_form{
-  margin-right: 150px;
-  background: red;
-  padding: 70px;
+  background: #ffffff;
+  margin-right: 30px;
+  padding: 50px;
   border-radius: 5px;
+  border: 1px solid black;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+}
+
+.card_inner_form{
+  width: 400px;
 }
 
 .contact1-left{
   width: 400px;
+}
+
+.contact1-form-title {
+  display: block;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 /*.contact1-form {
@@ -309,17 +325,20 @@ textarea.input1 + .shadow-input1 {
   border-radius: 25px;
 }*/
 .contact1-form-btn {
-  /*min-width: 193px;
+  /*min-width: 193px;*/
   height: 50px;
   border-radius: 25px;
   background: #57b846;
   font-size: 15px;
   line-height: 1.5;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0 25px;
   cursor: pointer;
   margin-left: auto;
-  margin-right: auto;*/
+  margin-right: auto;
 }
 
 button {
@@ -350,7 +369,7 @@ form .field input{
   transition: all 0.3s ease;
 }
 
-form .field textarea{
+textarea{
   height: 100%;
   width: 100%;
   outline: none;
@@ -360,6 +379,7 @@ form .field textarea{
   min-height: 150px;
   border-radius: 25px;
   font-family: "Lato", sans-serif;
+  resize: vertical;
 }
 
 form .field a{
