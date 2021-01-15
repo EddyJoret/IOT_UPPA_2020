@@ -1,13 +1,15 @@
 var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
 var sidebarCloseIcon = document.getElementById("sidebarIcon");
-
 function loading(){
     if(window.sessionStorage.getItem('P1Irri') !== null){
         document.getElementById('resultIrri').innerHTML = window.sessionStorage.getItem('P1Irri');
     }
     if(window.sessionStorage.getItem('P1Prec') !== null){
         document.getElementById('3ValPrec').innerHTML = window.sessionStorage.getItem('P1Prec');
+    }
+    if(window.sessionStorage.getItem('P1Vol') !== null){
+        document.getElementById('vc').innerHTML = window.sessionStorage.getItem('P1Vol');
     }
 }
 
@@ -30,7 +32,11 @@ function dataParc1(){
     }else{
         document.getElementById('resultIrri').textContent = "2";
     }
-    document.getElementById('vc').textContent = "50mm";
+    if(window.sessionStorage.getItem('P1Vol') !== null){
+        document.getElementById('vc').innerHTML = window.sessionStorage.getItem('P1Vol');
+    }else{
+        document.getElementById('vc').textContent = "50mm";
+    }
     document.getElementById('die').textContent = "8j";
 
     document.getElementById('1ValPrec').textContent = "3mm";
@@ -61,7 +67,11 @@ function dataParc2(){
     }else{
         document.getElementById('resultIrri').textContent = "3";
     }
-    document.getElementById('vc').textContent = "65mm";
+    if(window.sessionStorage.getItem('P2Vol') !== null){
+        document.getElementById('vc').innerHTML = window.sessionStorage.getItem('P2Vol');
+    }else{
+        document.getElementById('vc').textContent = "65mm";
+    }
     document.getElementById('die').textContent = "5j";
 
     document.getElementById('1ValPrec').textContent = "12mm";
@@ -92,7 +102,11 @@ function dataParc3(){
     }else{
         document.getElementById('resultIrri').textContent = "2";
     }
-    document.getElementById('vc').textContent = "58mm";
+    if(window.sessionStorage.getItem('P3Irri') !== null){
+        document.getElementById('vc').innerHTML = window.sessionStorage.getItem('P3Vol');
+    }else{
+        document.getElementById('vc').textContent = "58mm";
+    }
     document.getElementById('die').textContent = "7j";
 
     document.getElementById('1ValPrec').textContent = "0mm";
@@ -123,6 +137,7 @@ function valueInput(){
 function valueInputIrri(){
     var active_page = document.getElementsByClassName('active_link')[0].getAttribute('id');
     var value = document.getElementById('nbIrri').value;
+    var value2 = document.getElementById('nbVol').value;
     if(value !== ''){
         document.getElementById('resultIrri').innerHTML = value;
         if(active_page == 'parc1'){
@@ -133,7 +148,18 @@ function valueInputIrri(){
             window.sessionStorage.setItem('P3Irri',value);
         }
     }
+    if(value2 !== ''){
+        document.getElementById('vc').innerHTML = value2+"mm";
+        if(active_page == 'parc1'){
+            window.sessionStorage.setItem('P1Vol',value2+"mm");
+        }else if(active_page == 'parc2'){
+            window.sessionStorage.setItem('P2Vol',value2+"mm");
+        }else{
+            window.sessionStorage.setItem('P3Vol',value2+"mm");
+        }
+    }
     document.getElementById('nbIrri').value = '';
+    document.getElementById('nbVol').value = '';
 }
 
 function toggleSidebar() {

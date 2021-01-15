@@ -107,7 +107,7 @@ body {
 }
 
 main {
-  background-color: var(--bg-color);
+  background-color: #f0f0f0;
   grid-area: main;
   overflow-y: auto;
   color: var(--font-color);
@@ -155,7 +155,7 @@ main {
   padding: 25px;
   border-radius: 5px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
-  border: 1px solid grey;
+  border: 1px solid #ededed;
 }
 
 .card_form{
@@ -164,8 +164,8 @@ main {
   margin-right: auto;
   padding: 50px;
   border-radius: 5px;
-  border: 1px solid black;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+  border: 1px solid #ededed;
 }
 
 .card_inner_form{

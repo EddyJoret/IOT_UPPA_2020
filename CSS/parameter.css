@@ -154,8 +154,7 @@ body {
 }
 
 main {
-  /*background: #f3f4f6;*/
-  background-color: var(--bg-color);
+  background-color: #f0f0f0;
   grid-area: main;
   overflow-y: auto;
   color: var(--font-color);
@@ -206,6 +205,7 @@ main {
   padding: 25px;
   border-radius: 5px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+  border: 1px solid #ededed;
 }
 
 .card_inner > span {

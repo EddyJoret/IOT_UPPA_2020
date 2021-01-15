@@ -105,7 +105,8 @@ body {
 }
 
 main {
-  background: #f3f4f6;
+  /*background: #f3f4f6;*/
+  background: #f0f0f0;
   grid-area: main;
   overflow-y: auto;
 }
@@ -161,6 +162,7 @@ main {
   background: #ffffff;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
   word-wrap: break-word;
+  border: 1px solid #ededed;
 }
 
 .card__prev {
