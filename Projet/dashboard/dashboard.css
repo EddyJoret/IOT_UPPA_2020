@@ -68,11 +68,9 @@ body {
   grid-template-areas:
     "sidebar nav nav nav"
     "sidebar main main main";
-  /* grid-gap: 0.2rem; */
 }
 
 .navbar {
-  /*background: #ffffff;*/
   background-color: var(--bg-color);
   grid-area: nav;
   height: 60px;
@@ -240,7 +238,6 @@ main {
 #parc1 .tooltiptext, #parc2 .tooltiptext, #parc3 .tooltiptext {
   visibility: hidden;
   width: 130px;
-  /*background-color: #c2c2c2;*/
   background-color: white;
   color: black;
   text-align: center;
@@ -261,7 +258,6 @@ main {
 /*------------------------------------------------------------------------------*/
 
 /*  SIDEBAR STARTS HERE  */
-
 #sidebar {
   background: #020509;
   grid-area: sidebar;
@@ -277,7 +273,6 @@ main {
   align-items: center;
   color: #f3f4f6;
   margin-bottom: 30px;
-  /* color: #E85B6B; */
 }
 
 .sidebar__img {
