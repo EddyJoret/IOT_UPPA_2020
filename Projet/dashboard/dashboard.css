@@ -257,14 +257,16 @@ main {
   padding: 15px;
 }
 /*----------------------------------Popup parcelle--------------------------------------------*/
-#parc1 .tooltiptext {
+#parc1 .tooltiptext, #parc2 .tooltiptext, #parc3 .tooltiptext {
   visibility: hidden;
   width: 130px;
-  background-color: grey;
-  color: #fff;
+  /*background-color: #c2c2c2;*/
+  background-color: white;
+  color: black;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
+  border: 1px solid grey;
 
   /* Position the tooltip */
   position: absolute;
@@ -273,9 +275,11 @@ main {
   margin-left: -105px;
 }
 
-#parc1:hover .tooltiptext {
+#parc1:hover .tooltiptext, #parc2:hover .tooltiptext, #parc3:hover .tooltiptext {
   visibility: visible;
 }
+
+
 /*------------------------------------------------------------------------------*/
 
 /*  SIDEBAR STARTS HERE  */
