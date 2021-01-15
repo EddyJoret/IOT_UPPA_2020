@@ -191,13 +191,15 @@ main {
 /*------------------------------------------------------------------------------------------*/
 
 .container-contact1 {
-  border-radius: 10px;
+  padding: 10px 130px 0px 148px;
   overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  /*padding: 90px 130px 88px 148px*/
+}
+
+.contact1-left{
+  margin-right: 150px;
 }
 
 .contact1-form {
@@ -206,7 +208,6 @@ main {
 
 .contact1-form-title {
   display: block;
-  font-family: Montserrat-ExtraBold;
   font-size: 24px;
   color: #333;
   line-height: 1.2;
@@ -235,7 +236,6 @@ input.input1 {
   display: block;
   width: 100%;
   background: #e6e6e6;
-  font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;
   color: #666;
@@ -268,7 +268,6 @@ input.input1 + .shadow-input1 {
   height: 50px;
   border-radius: 25px;
   background: #57b846;
-  font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;
   color: #fff;
@@ -290,8 +289,7 @@ button {
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-      font-size: 14px;
+  font-size: 14px;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
