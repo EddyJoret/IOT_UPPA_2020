@@ -43,6 +43,7 @@ var optionstemp = {
       data: []
     }],
     chart: {
+      height: '350',
       type: 'line',
       animations: {
         enabled: true,
@@ -109,6 +110,7 @@ var optionshygro = {
       }
     ],
     chart: {
+      height: '350',
       type: 'line',
       animations: {
         enabled: true,
@@ -187,6 +189,7 @@ var optionsru = {
       }
     ],
     chart: {
+      height: '350',
       type: 'line',
       animations: {
         enabled: true,
@@ -267,6 +270,7 @@ var optionset = {
       data: []
     }],
     chart: {
+      height: '350',
       type: 'line',
       animations: {
         enabled: true,
