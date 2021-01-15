@@ -256,6 +256,27 @@ main {
   border: 0px solid #000000;
   padding: 15px;
 }
+/*----------------------------------Popup parcelle--------------------------------------------*/
+#parc1 .tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  background-color: grey;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 6%;
+  margin-left: -105px;
+}
+
+#parc1:hover .tooltiptext {
+  visibility: visible;
+}
+/*------------------------------------------------------------------------------*/
 
 /*  SIDEBAR STARTS HERE  */
 
