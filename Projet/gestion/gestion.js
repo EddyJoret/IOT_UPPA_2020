@@ -1,3 +1,7 @@
+var sidebarOpen = false;
+var sidebar = document.getElementById("sidebar");
+var sidebarCloseIcon = document.getElementById("sidebarIcon");
+
 function loading(){
     if(window.sessionStorage.getItem('P1Irri') !== null){
         document.getElementById('resultIrri').innerHTML = window.sessionStorage.getItem('P1Irri');
