@@ -172,16 +172,16 @@ main {
 
 /*----------------------------------------CORPS--------------------------------------------------*/
 
-.container-contact1 {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  margin-left: 40px;
-  justify-content: space-around;
-  margin-top: 40px;
+.main__cards {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 100px;
+  margin: 70px 0;
 }
 .card {
   background: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
   padding: 25px;
   border-radius: 5px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
@@ -190,7 +190,8 @@ main {
 
 .card_form{
   background: #ffffff;
-  margin-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 50px;
   border-radius: 5px;
   border: 1px solid black;
@@ -199,6 +200,10 @@ main {
 
 .card_inner_form{
   width: 400px;
+}
+
+.card_inner{
+  padding: 30px;
 }
 
 .contact1-left{
