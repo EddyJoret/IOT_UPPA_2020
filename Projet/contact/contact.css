@@ -191,7 +191,6 @@ main {
 /*------------------------------------------------------------------------------------------*/
 
 .container-contact1 {
-  padding: 10px 130px 0px 148px;
   overflow: hidden;
   display: flex;
   justify-content: space-around;
@@ -199,7 +198,7 @@ main {
 }
 
 .contact1-left{
-  margin-right: 150px;
+  width: 400px;
 }
 
 .contact1-form {
@@ -275,10 +274,9 @@ input.input1 + .shadow-input1 {
   justify-content: center;
   align-items: center;
   padding: 0 25px;
-  -webkit-transition: all .4s;
-  -o-transition: all .4s;
-  -moz-transition: all .4s;
-  transition: all .4s;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button {
@@ -287,13 +285,15 @@ button {
   background: 0 0;
 }
 
-.fa {
-  display: inline-block;
-  font-size: 14px;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.fas {
+  font-size: 22px; 
+  padding: 3%;
+  background-color: none;
+  border-radius: 80%;
+  margin: 2%;
+  cursor: pointer;
+  border:2px solid rgb(190, 190, 190);
+  color: rgb(190, 190, 190);
 }
 
 textarea.input1 {
