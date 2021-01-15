@@ -1,3 +1,7 @@
+var sidebarOpen = false;
+var sidebar = document.getElementById("sidebar");
+var sidebarCloseIcon = document.getElementById("sidebarIcon");
+
 function loading(){
   document.getElementById('myonoffswitch').attributes.setNamedItem(document.createAttribute("checked"));
   console.log(document.getElementById('myonoffswitch').attributes);

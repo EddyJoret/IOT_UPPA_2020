@@ -120,38 +120,7 @@ body {
   padding-bottom: 12px;
 }
 
-.navbar__right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar__right > a {
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-.navbar__right > a > i {
-  color: #a5aaad;
-  font-size: 16px;
-  border-radius: 50px;
-  background: #ffffff;
-  box-shadow: 2px 2px 5px #d9d9d9, -2px -2px 5px #ffffff;
-  padding: 7px;
-}
-
-.navbar__right > button > i {
-  color: #a5aaad;
-  font-size: 16px;
-  border-radius: 50px;
-  background: #ffffff;
-  box-shadow: 2px 2px 5px #d9d9d9, -2px -2px 5px #ffffff;
-  padding: 7px;
-  cursor: pointer;
-}
-
 main {
-  /*background: #f3f4f6;*/
   background-color: var(--bg-color);
   grid-area: main;
   overflow-y: auto;
@@ -195,9 +164,7 @@ main {
 .card {
   display: flex;
   flex-direction: column;
-  /*justify-content: space-around;*/
   background: #ffffff;
-  /*height: auto;*/
   padding: 25px;
   border-radius: 5px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
@@ -241,7 +208,6 @@ input{
 #parc1 .tooltiptext, #parc2 .tooltiptext, #parc3 .tooltiptext {
   visibility: hidden;
   width: 130px;
-  /*background-color: #c2c2c2;*/
   background-color: white;
   color: black;
   text-align: center;
@@ -260,16 +226,6 @@ input{
   visibility: visible;
 }
 /*------------------------------------------------------------------------------*/
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode h1{
-  color: white;
-}
-
 
 /*  SIDEBAR STARTS HERE  */
 #sidebar {
@@ -442,7 +398,6 @@ input{
     display: block; 
     overflow: hidden; 
     cursor: pointer;
-    /*border: 1px solid #999999; */
     border-radius: 50px;
 }
 .onoffswitch-inner {
@@ -470,7 +425,6 @@ input{
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
     right: 35px;
-    /*border: 1px solid #999999;*/
     border-radius: 50px;
     transition: all 0.3s ease-in 0s; 
 }
