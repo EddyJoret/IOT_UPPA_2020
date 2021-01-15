@@ -94,6 +94,20 @@ function dataParc3(){
     document.getElementById('parc3').classList.add("active_link");
 }
 
+function toggleSidebar() {
+    if (!sidebarOpen) {
+      sidebar.classList.add("sidebar_responsive");
+      sidebarOpen = true;
+    }
+};
+
+function closeSidebar() {
+    if (sidebarOpen) {
+      sidebar.classList.remove("sidebar_responsive");
+      sidebarOpen = false;
+    }
+};
+
 function myFunction() {
    var element = document.body.children[0].children[1];
    var element2 = document.body.children[0].children[0];
