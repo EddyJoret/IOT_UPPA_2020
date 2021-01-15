@@ -188,67 +188,133 @@ main {
   color: #a5aaad;
 }
 
-.main__cards {
-  /*display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
-  margin: 20px 0;*/
-  display: grid;
-  grid-template-columns: 3fr 3fr 3fr;
-  gap: 20px;
-  margin: 20px 0;
-}
+/*------------------------------------------------------------------------------------------*/
 
-.card {
+.container-contact1 {
+  border-radius: 10px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  /*justify-content: space-around;*/
-  background: #ffffff;
-  /*height: auto;*/
-  padding: 25px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
-}
-
-.card_inner {
-  /*display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between;*/
+  /*padding: 90px 130px 88px 148px*/
 }
 
-.card_inner > span {
-  font-size: 25px;
+.contact1-form {
+  width: 390px;
 }
 
-input{
-  width: 90%;
-  outline: none;
-  font-size: 17px;
-  padding-left: 20px;
-  border: 1px solid lightgrey;
+.contact1-form-title {
+  display: block;
+  font-family: Montserrat-ExtraBold;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 44px;
+}
+
+.validate-input {
+  position: relative;
+}
+
+.wrap-input1 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+input.input1 {
+  height: 50px;
   border-radius: 25px;
-  transition: all 0.3s ease;
+  padding: 0 30px;
 }
 
-.button-save{
-  display: flex;
-  justify-content: flex-end;
+.input1 {
+  display: block;
+  width: 100%;
+  background: #e6e6e6;
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666;
 }
 
-.btn-save{
-  font-size: 16px;
-  border-radius: 2em;
-  padding: 0.3em 1.2em;
-  background-color: #4eb5f1;
-  text-decoration: none;
+input {
+  outline: none;
   border: none;
-  color: white;
 }
 
-.btn-save:hover{
-  background-color: #4095c6;
-  cursor: pointer;
+input.input1 + .shadow-input1 {
+  border-radius: 25px;
 }
+
+.shadow-input1 {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0;
+  color: rgba(87,184,70,.5);
+}
+
+.contact1-form-btn {
+  min-width: 193px;
+  height: 50px;
+  border-radius: 25px;
+  background: #57b846;
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  -moz-transition: all .4s;
+  transition: all .4s;
+}
+
+button {
+  outline: none !important;
+  border: none;
+  background: 0 0;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+textarea.input1 {
+  min-height: 150px;
+  border-radius: 25px;
+  padding: 12px 30px;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  overflow: auto;
+  resize: vertical;
+}
+textarea.input1 + .shadow-input1 {
+  border-radius: 25px;
+}
+
+/*-----------------------------------------------------------------------------------------*/
 
 .dark-mode {
   background-color: black;
