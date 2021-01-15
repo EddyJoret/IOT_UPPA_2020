@@ -202,18 +202,10 @@ main {
 .card {
   display: flex;
   flex-direction: column;
-  /*justify-content: space-around;*/
   background: #ffffff;
-  /*height: auto;*/
   padding: 25px;
   border-radius: 5px;
   box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
-}
-
-.card_inner {
-  /*display: flex;
-  align-items: center;
-  justify-content: space-between;*/
 }
 
 .card_inner > span {
