@@ -1,6 +1,7 @@
 var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
 var sidebarCloseIcon = document.getElementById("sidebarIcon");
+
 function loading(){
     if(window.sessionStorage.getItem('P1Irri') !== null){
         document.getElementById('resultIrri').innerHTML = window.sessionStorage.getItem('P1Irri');
@@ -102,7 +103,7 @@ function dataParc3(){
     }else{
         document.getElementById('resultIrri').textContent = "2";
     }
-    if(window.sessionStorage.getItem('P3Irri') !== null){
+    if(window.sessionStorage.getItem('P3Vol') !== null){
         document.getElementById('vc').innerHTML = window.sessionStorage.getItem('P3Vol');
     }else{
         document.getElementById('vc').textContent = "58mm";
