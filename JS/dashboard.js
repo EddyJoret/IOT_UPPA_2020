@@ -568,6 +568,9 @@ function dataParc1(){
     document.getElementById('jr2temp').innerHTML = "15°";
     document.getElementById('jr2etp').innerHTML = "ETP: 3mm";
 
+    document.getElementById('jr3icon').className = "fa fa-sun fa-2x";
+    document.getElementById('jr3icon').style.color = "#ffd74f";
+    document.getElementById('jr3temp').innerHTML = "19°";
     document.getElementById('jr3etp').innerHTML = "ETP: 3.5mm";
 
     document.getElementById('jr4icon').className = "fa fa-sun fa-2x";
@@ -603,6 +606,9 @@ function dataParc2(){
     document.getElementById('jr2temp').innerHTML = "15°";
     document.getElementById('jr2etp').innerHTML = "ETP: 1mm";
 
+    document.getElementById('jr3icon').className = "fa fa-sun fa-2x";
+    document.getElementById('jr3icon').style.color = "#ffd74f";
+    document.getElementById('jr3temp').innerHTML = "18°";
     document.getElementById('jr3etp').innerHTML = "ETP: 2.3mm";
 
     document.getElementById('jr4icon').className = "fad fa-clouds fa-2x";
@@ -630,7 +636,7 @@ function dataParc3(){
     document.getElementById('parc3').onclick = null;
     document.getElementById('parc3').classList.add("active_link");
 
-    document.getElementById('jr1temp').innerHTML = "17°";
+    document.getElementById('jr1temp').innerHTML = "20°";
     document.getElementById('jr1etp').innerHTML = "ETP: 4.5mm";
 
     document.getElementById('jr2icon').className = "fa fa-sun fa-2x";
@@ -640,8 +646,11 @@ function dataParc3(){
 
     document.getElementById('jr3icon').className = "fad fa-clouds fa-2x";
     document.getElementById('jr3icon').style.color = "#66a6f7";
+    document.getElementById('jr3temp').innerHTML = "23°";
     document.getElementById('jr3etp').innerHTML = "ETP: 4.8mm";
 
+    document.getElementById('jr4icon').className = "fa fa-sun fa-2x";
+    document.getElementById('jr4icon').style.color = "#ffd74f";
     document.getElementById('jr4temp').innerHTML = "22°";
     document.getElementById('jr4etp').innerHTML = "ETP: 5mm";
 
