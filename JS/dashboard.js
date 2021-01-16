@@ -79,7 +79,7 @@ var optionstemp = {
       type: 'datetime'
     },
     title: {
-      text: 'Capteur température'
+      text: 'Capteur horaire de température'
     },
     tooltip: {
       x: {
@@ -155,7 +155,7 @@ var optionshygro = {
       type: 'datetime'
     },
     title: {
-        text: 'Capteur hygrométrie'
+        text: 'Capteur horaire d\'hygrométrie'
     },
     tooltip: {
       x: {
@@ -209,6 +209,7 @@ var optionsru = {
       curve: 'smooth',
       width: 3
     },
+    colors : ['#006600'],
     markers: {
       size: 3
     },
@@ -246,7 +247,7 @@ var optionsru = {
       ]
     },
     title: {
-      text: 'Capteur RU'
+      text: 'Capteur horaire du RU'
     },
     tooltip: {
       x: {
@@ -290,6 +291,7 @@ var optionset = {
       curve: 'smooth',
       width: 3
     },
+    colors : ['#A98921'],
     markers: {
       size: 3
     },
@@ -297,14 +299,14 @@ var optionset = {
       title: {
         text: 'ETP (en mm)'
       },
-      max: 100,
+      max: 6,
       min: 0
     },
     xaxis: {
       type: 'datetime'
     },
     title: {
-      text: 'Capteur ETP'
+      text: 'Capteur ETP depuis le début de la journée'
     },
     tooltip: {
       x: {
