@@ -89,7 +89,7 @@ var optionstemp = {
       y: {
         formatter: function(y) {
           if(typeof y != "undefinied") {
-            return y.toFixed(0) + "°";
+            return y.toFixed(1) + "°";
           }
           return y;
         }
@@ -165,7 +165,7 @@ var optionshygro = {
       y: [{
         formatter: function(y) {
           if(typeof y != "undefinied") {
-            return y.toFixed(0) + "%";
+            return y.toFixed(1) + "%";
           }
           return y;
         }
@@ -256,7 +256,7 @@ var optionsru = {
       y: {
         formatter: function(y) {
           if(typeof y != "undefinied") {
-            return y.toFixed(0) + "mm";
+            return y.toFixed(2) + "mm";
           }
           return y;
         }
@@ -314,7 +314,7 @@ var optionset = {
       y: {
         formatter: function(y) {
           if(typeof y != "undefinied") {
-            return y.toFixed(0) + "mm";
+            return y.toFixed(2) + "mm";
           }
           return y;
         }
