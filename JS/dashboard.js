@@ -393,7 +393,7 @@ function initData(res, num) {
         moytemp += parseFloat(res.feeds[i].field2);
         moyhygro += parseFloat(res.feeds[i].field4);
         moyru += parseFloat(res.feeds[i].field5);
-        moyet += parseFloat(res.feeds[i].field3);
+        moyet = parseFloat(res.feeds[i].field3);
 
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(texttemp);
@@ -452,24 +452,24 @@ function initData(res, num) {
 
     switch(num){
       case 1:
-        parc1moytemp = Math.ceil(moytemp*10)/10;
-        parc1moyhygro = Math.ceil(moyhygro*10)/10;
-        parc1moyru = Math.ceil(moyru*10)/10;
-        parc1moyet = Math.ceil(moyet*10)/10;
+        parc1moytemp = Math.round(moytemp*10)/10;
+        parc1moyhygro = Math.round(moyhygro*10)/10;
+        parc1moyru = Math.round(moyru*100)/100;
+        parc1moyet = Math.round(moyet*100)/100;
         break;
 
       case 2:
-        parc2moytemp = Math.ceil(moytemp*10)/10;
-        parc2moyhygro = Math.ceil(moyhygro*10)/10;
-        parc2moyru = Math.ceil(moyru*10)/10;
-        parc2moyet = Math.ceil(moyet*10)/10;
+        parc2moytemp = Math.round(moytemp*10)/10;
+        parc2moyhygro = Math.round(moyhygro*10)/10;
+        parc2moyru = Math.round(moyru*100)/100;
+        parc2moyet = Math.round(moyet*100)/100;
         break;
 
       case 3:
-        parc3moytemp = Math.ceil(moytemp*10)/10;
-        parc3moyhygro = Math.ceil(moyhygro*10)/10;
-        parc3moyru = Math.ceil(moyru*10)/10;
-        parc3moyet = Math.ceil(moyet*10)/10;
+        parc3moytemp = Math.round(moytemp*10)/10;
+        parc3moyhygro = Math.round(moyhygro*10)/10;
+        parc3moyru = Math.round(moyru*100)/100;
+        parc3moyet = Math.round(moyet*100)/100;
         break;
     }
 };
