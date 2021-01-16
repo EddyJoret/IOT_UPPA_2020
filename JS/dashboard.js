@@ -388,10 +388,10 @@ function initData(res, num) {
     for(var i = deb; i < res.feeds.length; i++){
         div++;
 
-        moytemp += parseInt(res.feeds[i].field2, 10);
-        moyhygro += parseInt(res.feeds[i].field4, 10);
-        moyru += parseInt(res.feeds[i].field5, 10);
-        moyet += parseInt(res.feeds[i].field3, 10);
+        moytemp += parseFloat(res.feeds[i].field2);
+        moyhygro += parseFloat(res.feeds[i].field4);
+        moyru += parseFloat(res.feeds[i].field5);
+        moyet += parseFloat(res.feeds[i].field3);
 
         var texttemp = '{"x":\"' + res.feeds[i].created_at.substr(0,10) + '-' + res.feeds[i].created_at.substr(-9, 5) + '\","y":\"' + res.feeds[i].field2 + '\"}';
         var objtemp = JSON.parse(texttemp);
