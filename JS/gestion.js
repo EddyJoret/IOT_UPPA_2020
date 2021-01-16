@@ -25,7 +25,7 @@ function dataParc1(){
     document.getElementById('titleParc').textContent = "Parcelle 1";
     document.getElementById('variete').textContent = "Maïs Grain";
     document.getElementById('flor').textContent = "Floraison femelle";
-    document.getElementById('dateSemis').textContent = "20/04/2020";
+    document.getElementById('dateSemis').textContent = "20/12/2020";
 
     document.getElementById('h').textContent = "Irrigation de la parcelle 1";
     if(window.sessionStorage.getItem('P1Irri') !== null){
@@ -60,7 +60,7 @@ function dataParc2(){
     document.getElementById('titleParc').textContent = "Parcelle 2";
     document.getElementById('variete').textContent = "Maïs Waxy";
     document.getElementById('flor').textContent = "Floraison femelle";
-    document.getElementById('dateSemis').textContent = "30/04/2020";
+    document.getElementById('dateSemis').textContent = "30/12/2020";
 
     document.getElementById('h').textContent = "Irrigation de la parcelle 2";
     if(window.sessionStorage.getItem('P2Irri') !== null){
@@ -95,7 +95,7 @@ function dataParc3(){
     document.getElementById('titleParc').textContent = "Parcelle 3";
     document.getElementById('variete').textContent = "Maïs Grain";
     document.getElementById('flor').textContent = "Floraison femelle";
-    document.getElementById('dateSemis').textContent = "15/04/2020";
+    document.getElementById('dateSemis').textContent = "15/12/2020";
 
     document.getElementById('h').textContent = "Irrigation de la parcelle 3";
     if(window.sessionStorage.getItem('P3Irri') !== null){
